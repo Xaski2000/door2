@@ -288,7 +288,6 @@ caseApart.addEventListener('click', e => {
 		resultOut.append(img);
 
 		caseInside.style.display = 'block';
-		// outPanel.style.display = 'flex';
 	}
 
 });
@@ -339,7 +338,6 @@ caseHouse.addEventListener('click', e => {
 		resultOut.append(img);
 
 		caseInside.style.display = 'block';
-		// outPanel.style.display = 'flex';
 	}
 
 });
