@@ -207,7 +207,7 @@ function showCaseHouse() {
 		if (item.place == 'house') {
 			let div = document.createElement('div');
 			div.className = 'case__item';
-			div.setAttribute('data-src', `./img/result/Корпуса/В дом/${item.name}.png`);
+			div.setAttribute('data-src', i);
 			div.innerHTML = ` <p class="case__item-name">${item.name}</p>
 									<p class="case__item-desc">${item.desc}</p>`;
 			caseHouse.append(div);
@@ -265,11 +265,18 @@ caseApart.addEventListener('click', e => {
 
 	if (a != '')
 	{
+		outPanel.style.display = 'flex';
+
 		let b = '';
 		for (let key in caseList[a]) {
 			if (key == 'name') {
 				// console.log(caseList[a][key]);
 				b = caseList[a][key];
+			}
+
+			if (key == 'overPanel' && caseList[a][key] === true) {
+				// console.log(caseList[a][key]);
+				outPanel.style.display = 'none';
 			}
 		}
 		console.log(b);
@@ -281,7 +288,7 @@ caseApart.addEventListener('click', e => {
 		resultOut.append(img);
 
 		caseInside.style.display = 'block';
-		outPanel.style.display = 'flex';
+		// outPanel.style.display = 'flex';
 	}
 
 });
@@ -308,14 +315,31 @@ caseHouse.addEventListener('click', e => {
 
 	if (a != '')
 	{
+		outPanel.style.display = 'flex';
+
+		let b = '';
+
+		for (let key in caseList[a]) {
+			if (key == 'name') {
+				// console.log(caseList[a][key]);
+				b = caseList[a][key];
+			}
+
+			if (key == 'overPanel' && caseList[a][key] === true) {
+				// console.log(caseList[a][key]);
+				outPanel.style.display = 'none';
+			}
+		}
+		console.log(b);
+
 		document.querySelector('.case-result').remove();
 		let img = document.createElement('img');
 		img.className = 'resultOut__item case-result';
-		img.setAttribute('src', `${a}`);
+		img.setAttribute('src', `./img/result/Корпуса/В дом/${b}.png`);
 		resultOut.append(img);
 
 		caseInside.style.display = 'block';
-		outPanel.style.display = 'flex';
+		// outPanel.style.display = 'flex';
 	}
 
 });
