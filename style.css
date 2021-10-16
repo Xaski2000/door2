@@ -339,7 +339,7 @@ a:hover {
 	background-color: #999;
 	height: 100px;
 	width: 50%;
-	align-self: flex-end;
+	/* align-self: flex-end; */
 	cursor: pointer;
 }
 

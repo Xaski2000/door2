@@ -201,27 +201,28 @@ function hideAll() {
 
 outBut.addEventListener('click', e => {
 	hideAll();
+	outBut.parentNode.style.justifyContent = 'end';
 	outPanel.style.display = 'block';
+	inBut.style.display = 'block';
+	outBut.style.display = 'none';
 	knobBut.style.display = 'none';
 });
 
 inBut.addEventListener('click', e => {
 	hideAll();
 	inPanel.style.display = 'block';
-	if (getComputedStyle(outBut,null).display == 'block') {
-		outBut.style.display = 'none';
-		knobBut.style.display = 'block';
-
-	} else {
-		outBut.style.display = 'block';
-		knobBut.style.display = 'none';
-	}
+	knobBut.style.display = 'block';
+	outBut.style.display = 'block';
+	inBut.style.display = 'none';
 });
 
 knobBut.addEventListener('click', e => {
 	hideAll();
+	knobBut.parentNode.style.justifyContent = 'start';
 	knob.style.display = 'block';
+	inBut.style.display = 'block';
 	outBut.style.display = 'none';
+	knobBut.style.display = 'none';
 });
 
 
