@@ -57,6 +57,7 @@ a:hover {
 	width: 510px;
 	background-color: #ccc;
 	margin-left: 0;
+	position: relative;
 }
 
 .result {
@@ -183,7 +184,7 @@ a:hover {
 }
 
 .outPanel-box {
-	height: 145px;
+	height: 430px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -194,7 +195,7 @@ a:hover {
 	align-content: start;
 	padding: 5px;
 	margin-top: 5px;
-	display: none;
+	display: flex;
 }
 
 .outPanel__item {
@@ -229,7 +230,7 @@ a:hover {
 }
 
 .inPanel-box {
-	height: 145px;
+	height: 430px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -275,7 +276,7 @@ a:hover {
 }
 
 .knob-box {
-	height: 165px;
+	height: 430px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -319,6 +320,31 @@ a:hover {
 	object-fit: cover;
 	border: 3px solid #e9e9e9;
 	transition: all 0.3s;
+}
+
+.button-box {
+	display: flex;
+	margin: auto auto 0px auto;
+	height: 100px;
+	width: 100%;
+	padding: 0;
+	background-color: #eee;
+	position: absolute;
+	bottom: 0;
+	justify-content: end;
+}
+
+.button__item {
+	display: inline-block;
+	background-color: #999;
+	height: 100px;
+	width: 50%;
+	align-self: flex-end;
+	cursor: pointer;
+}
+
+.button__text {
+	font-size: 16px;
 }
 
 
@@ -463,7 +489,31 @@ a:hover {
 	display: flex;
 }
 
+.underlay {
+	/* display: none; */
+	background: #000;
+	position: absolute;
+	/* left: 0;
+	top: 0; */
+	height: 430px;
+	width: 100%;
+	opacity: 0.6;
+	z-index: 100;
+	margin: -5px -5px -5px -5px;
+}
 
-.aaa {
-	display: none;
+.underlay__text {
+	display: block;
+	position: absolute;
+	/* left: 0;
+	top: 0; */
+	height: 100px;
+	width: 100%;
+	/* opacity: 0.4; */
+	opacity: 1;
+	margin: 170px -5px -5px;
+	font-size: 40px;
+	text-align: center;
+	z-index: 100;
+	color: #fff;
 }

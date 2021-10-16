@@ -166,9 +166,14 @@ const caseApart = document.querySelector('.case-apartment'),
 		resultIn = document.querySelector('.resultIn');
 
 const apartBut = document.querySelector('.apartment'),
-		houseBut = document.querySelector('.house');
+		houseBut = document.querySelector('.house'),
+		outBut = document.querySelector('.button-out'),
+		inBut = document.querySelector('.button-in'),
+		knobBut = document.querySelector('.button-knob');
 
-const caseInside = document.querySelector('.case-inside');
+const caseInside = document.querySelector('.case-inside'),
+		under = document.querySelector('.underlay'),
+		underText = document.querySelector('.underlay__text');
 
 
 
@@ -186,6 +191,37 @@ houseBut.addEventListener('click', e => {
 
 	caseHouse.classList.add('flex');
 	caseApart.classList.remove('flex');
+});
+
+function hideAll() {
+	outPanel.style.display = 'none';
+	inPanel.style.display = 'none';
+	knob.style.display = 'none';
+}
+
+outBut.addEventListener('click', e => {
+	hideAll();
+	outPanel.style.display = 'block';
+	knobBut.style.display = 'none';
+});
+
+inBut.addEventListener('click', e => {
+	hideAll();
+	inPanel.style.display = 'block';
+	if (getComputedStyle(outBut,null).display == 'block') {
+		outBut.style.display = 'none';
+		knobBut.style.display = 'block';
+
+	} else {
+		outBut.style.display = 'block';
+		knobBut.style.display = 'none';
+	}
+});
+
+knobBut.addEventListener('click', e => {
+	hideAll();
+	knob.style.display = 'block';
+	outBut.style.display = 'none';
 });
 
 
@@ -265,7 +301,8 @@ caseApart.addEventListener('click', e => {
 
 	if (a != '')
 	{
-		outPanel.style.display = 'flex';
+		under.style.display = 'none';
+		underText.style.display = 'none';
 
 		let b = '';
 		for (let key in caseList[a]) {
@@ -276,7 +313,8 @@ caseApart.addEventListener('click', e => {
 
 			if (key == 'overPanel' && caseList[a][key] === true) {
 				// console.log(caseList[a][key]);
-				outPanel.style.display = 'none';
+				under.style.display = 'block';
+				underText.style.display = 'block';
 			}
 		}
 		console.log(b);
@@ -314,7 +352,8 @@ caseHouse.addEventListener('click', e => {
 
 	if (a != '')
 	{
-		outPanel.style.display = 'flex';
+		under.style.display = 'none';
+		underText.style.display = 'none';
 
 		let b = '';
 
@@ -326,7 +365,8 @@ caseHouse.addEventListener('click', e => {
 
 			if (key == 'overPanel' && caseList[a][key] === true) {
 				// console.log(caseList[a][key]);
-				outPanel.style.display = 'none';
+				under.style.display = 'block';
+				underText.style.display = 'block';
 			}
 		}
 		console.log(b);
@@ -373,7 +413,7 @@ outPanel.addEventListener('click', e => {
 		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 		resultOut.append(img);
 
-		inPanel.style.display = 'flex';
+		// inPanel.style.display = 'flex';
 	}
 
 });
@@ -406,7 +446,7 @@ inPanel.addEventListener('click', e => {
 		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 		resultIn.append(img);
 
-		knob.style.display = 'flex';
+		// knob.style.display = 'flex';
 	}
 
 });
