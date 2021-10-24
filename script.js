@@ -162,6 +162,9 @@ const caseApart = document.querySelector('.case-apartment'),
 		outPanel = document.querySelector('.outPanel-box'),
 		inPanel = document.querySelector('.inPanel-box'),
 		knob = document.querySelector('.knob-box'),
+		outPanelText = document.querySelector('.outPanel-box__text'),
+		inPanelText = document.querySelector('.inPanel-box__text'),
+		knobText = document.querySelector('.knob-box__text'),
 		resultOut = document.querySelector('.resultOut'),
 		resultIn = document.querySelector('.resultIn');
 
@@ -197,36 +200,59 @@ function hideAll() {
 	outPanel.style.display = 'none';
 	inPanel.style.display = 'none';
 	knob.style.display = 'none';
+	outPanelText.style.display = 'none';
+	inPanelText.style.display = 'none';
+	knobText.style.display = 'none';
 }
 
-outBut.addEventListener('click', e => {
+function outButEvent() {
 	hideAll();
 	outBut.parentNode.style.justifyContent = 'end';
+
 	outPanel.style.display = 'block';
+	outPanelText.style.display = 'block';
+
 	inBut.style.display = 'block';
 	outBut.style.display = 'none';
 	knobBut.style.display = 'none';
-});
+}
 
-inBut.addEventListener('click', e => {
+function inButEvent() {
 	hideAll();
 	inPanel.style.display = 'block';
+	inPanelText.style.display = 'block';
+
 	knobBut.style.display = 'block';
 	outBut.style.display = 'block';
 	inBut.style.display = 'none';
-});
+}
 
-knobBut.addEventListener('click', e => {
+function knobButEvent() {
 	hideAll();
 	knobBut.parentNode.style.justifyContent = 'start';
+
 	knob.style.display = 'block';
+	knobText.style.display = 'block';
+
 	inBut.style.display = 'block';
 	outBut.style.display = 'none';
 	knobBut.style.display = 'none';
+}
+
+outBut.addEventListener('click', e => {
+	outButEvent();
+});
+
+inBut.addEventListener('click', e => {
+	inButEvent();
+});
+
+knobBut.addEventListener('click', e => {
+	knobButEvent();
 });
 
 
-function showCaseApart() {
+function showCase() {
 	caseList.forEach((item, i) => {
 		if (item.place == 'apartment') {
 			let div = document.createElement('div');
@@ -236,11 +262,6 @@ function showCaseApart() {
 									<p class="case__item-desc">${item.desc}</p>`;
 			caseApart.append(div);
 		}
-	});
-}
-
-function showCaseHouse() {
-	caseList.forEach((item, i) => {
 		if (item.place == 'house') {
 			let div = document.createElement('div');
 			div.className = 'case__item';
@@ -252,12 +273,25 @@ function showCaseHouse() {
 	});
 }
 
+// function showCaseHouse() {
+// 	caseList.forEach((item, i) => {
+// 		if (item.place == 'house') {
+// 			let div = document.createElement('div');
+// 			div.className = 'case__item';
+// 			div.setAttribute('data-src', i);
+// 			div.innerHTML = ` <p class="case__item-name">${item.name}</p>
+// 									<p class="case__item-desc">${item.desc}</p>`;
+// 			caseHouse.append(div);
+// 		}
+// 	});
+// }
+
 function showOutPanel() {
 	outPanelList.forEach((item, i) => {
 			let div = document.createElement('div');
 			div.className = 'outPanel__item';
-			div.setAttribute('data-src', `./img/result/Внешние панели/${item.name}.png`);
-			div.innerHTML = ` <img data-src='./img/result/Внешние панели/${item.name}.png' src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
 			outPanel.append(div);
 	});
 }
@@ -266,7 +300,8 @@ function showInPanel() {
 	inPanelList.forEach((item, i) => {
 			let div = document.createElement('div');
 			div.className = 'inPanel__item';
-			div.innerHTML = ` <img data-src="./img/result/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
 			inPanel.append(div);
 	});
 }
@@ -275,29 +310,41 @@ function showKnob() {
 	knobList.forEach((item, i) => {
 			let div = document.createElement('div');
 			div.className = 'knob__item';
-			div.innerHTML = ` <img data-src="${item.name}.png" src="./img/mini/Фурнитура/${item.name}.png" class="knob__item-img">`;
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Фурнитура/${item.name}.png" class="knob__item-img">`;
 			knob.append(div);
 	});
 }
 
-caseApart.addEventListener('click', e => {
+function caseBorder() {
+	const item = document.querySelectorAll('.case__item');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+}
 
+caseApart.addEventListener('click', e => {
 	let a = '';
 
 	if (e.target && e.target.className == 'case__item')
 	{
 		a = e.target.getAttribute('data-src');
-
+		caseBorder();
+		e.target.classList.add('border');
 	}
 
 	if (e.target && e.target.className == 'case__item-name')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+		caseBorder();
+		e.target.parentNode.classList.add('border');
 	}
 
 	if (e.target && e.target.className == 'case__item-desc')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+		caseBorder();
+		e.target.parentNode.classList.add('border');
 	}
 
 	if (a != '')
@@ -306,19 +353,33 @@ caseApart.addEventListener('click', e => {
 		underText.style.display = 'none';
 
 		let b = '';
+
 		for (let key in caseList[a]) {
 			if (key == 'name') {
 				// console.log(caseList[a][key]);
 				b = caseList[a][key];
 			}
 
+			if (key == 'price') {
+				price.case = caseList[a][key];
+				considerPrice();
+			}
+
 			if (key == 'overPanel' && caseList[a][key] === true) {
 				// console.log(caseList[a][key]);
 				under.style.display = 'block';
 				underText.style.display = 'block';
+
+				oldPrice.outPanel = price.outPanel;
+				price.outPanel = 0;
+			}
+
+			if (key == 'overPanel' && caseList[a][key] === false) {
+				price.outPanel = oldPrice.outPanel;
 			}
 		}
-		console.log(b);
+
+		// console.log(b);
 
 		document.querySelector('.case-result').remove();
 		let img = document.createElement('img');
@@ -332,23 +393,31 @@ caseApart.addEventListener('click', e => {
 });
 
 caseHouse.addEventListener('click', e => {
-
 	let a = '';
 
 	if (e.target && e.target.className == 'case__item')
 	{
 		a = e.target.getAttribute('data-src');
 
+		caseBorder();
+		e.target.classList.add('border');
+
 	}
 
 	if (e.target && e.target.className == 'case__item-name')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+
+		caseBorder();
+		e.target.parentNode.classList.add('border');
 	}
 
 	if (e.target && e.target.className == 'case__item-desc')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+
+		caseBorder();
+		e.target.parentNode.classList.add('border');
 	}
 
 	if (a != '')
@@ -364,13 +433,25 @@ caseHouse.addEventListener('click', e => {
 				b = caseList[a][key];
 			}
 
+			if (key == 'price') {
+				price.case = caseList[a][key];
+				considerPrice();
+			}
+
 			if (key == 'overPanel' && caseList[a][key] === true) {
 				// console.log(caseList[a][key]);
 				under.style.display = 'block';
 				underText.style.display = 'block';
+
+				oldPrice.outPanel = price.outPanel;
+				price.outPanel = 0;
+			}
+
+			if (key == 'overPanel' && caseList[a][key] === false) {
+				price.outPanel = oldPrice.outPanel;
 			}
 		}
-		console.log(b);
+		// console.log(b);
 
 		document.querySelector('.case-result').remove();
 		let img = document.createElement('img');
@@ -387,32 +468,44 @@ caseHouse.addEventListener('click', e => {
 
 
 outPanel.addEventListener('click', e => {
-
 	let a = '';
 
 	if (e.target && e.target.className == 'outPanel__item-img')
 	{
-		a = e.target.getAttribute('data-src');
+		a = e.target.parentNode.getAttribute('data-src');
 	}
-
-	// if (e.target && e.target.className == 'case__item-name')
-	// {
-	// 	a = e.target.parentNode.getAttribute('data-src');
-	// }
-
-	// if (e.target && e.target.className == 'case__item-desc')
-	// {
-	// 	a = e.target.parentNode.getAttribute('data-src');
-	// }
 
 	if (a != '')
 	{
+		let b = '';
+
+		for (let key in outPanelList[a]) {
+			if (key == 'name') {
+				// console.log(caseList[a][key]);
+				b = outPanelList[a][key];
+			}
+
+			if (key == 'price') {
+				price.outPanel = outPanelList[a][key];
+				considerPrice();
+			}
+		}
+		// console.log(b);
+
+		const item = document.querySelectorAll('.outPanel__item-img');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+		e.target.classList.add('border');
+
 		document.querySelector('.facingOut-result').remove();
 		let img = document.createElement('img');
 		img.className = 'resultOut__item facingOut-result';
-		img.setAttribute('src', `${a}`);
+		img.setAttribute('src', `./img/result/Внешние панели/${b}.png`);
 		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 		resultOut.append(img);
+
+		inButEvent();
 
 		// inPanel.style.display = 'flex';
 	}
@@ -420,32 +513,44 @@ outPanel.addEventListener('click', e => {
 });
 
 inPanel.addEventListener('click', e => {
-
 	let a = '';
 
 	if (e.target && e.target.className == 'inPanel__item-img')
 	{
-		a = e.target.getAttribute('data-src');
+		a = e.target.parentNode.getAttribute('data-src');
 	}
-
-	// if (e.target && e.target.className == 'case__item-name')
-	// {
-	// 	a = e.target.parentNode.getAttribute('data-src');
-	// }
-
-	// if (e.target && e.target.className == 'case__item-desc')
-	// {
-	// 	a = e.target.parentNode.getAttribute('data-src');
-	// }
 
 	if (a != '')
 	{
+		let b = '';
+
+		for (let key in inPanelList[a]) {
+			if (key == 'name') {
+				// console.log(caseList[a][key]);
+				b = inPanelList[a][key];
+			}
+
+			if (key == 'price') {
+				price.inPanel = inPanelList[a][key];
+				considerPrice();
+			}
+		}
+		// console.log(b);
+
+		const item = document.querySelectorAll('.inPanel__item-img');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+		e.target.classList.add('border');
+
 		document.querySelector('.facingIn-result').remove();
 		let img = document.createElement('img');
 		img.className = 'resultIn__item facingIn-result';
-		img.setAttribute('src', `${a}`);
+		img.setAttribute('src', `./img/result/Внутренние панели/3Д фрезерованные 16мм/${b}.png`);
 		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 		resultIn.append(img);
+
+		knobButEvent();
 
 		// knob.style.display = 'flex';
 	}
@@ -458,49 +563,79 @@ knob.addEventListener('click', e => {
 
 	if (e.target && e.target.className == 'knob__item-img')
 	{
-		a = e.target.getAttribute('data-src');
+		a = e.target.parentNode.getAttribute('data-src');
 	}
-
-	// if (e.target && e.target.className == 'case__item-name')
-	// {
-	// 	a = e.target.parentNode.getAttribute('data-src');
-	// }
-
-	// if (e.target && e.target.className == 'case__item-desc')
-	// {
-	// 	a = e.target.parentNode.getAttribute('data-src');
-	// }
 
 	if (a != '')
 	{
+		let b = '';
+
+		for (let key in knobList[a]) {
+			if (key == 'name') {
+				// console.log(caseList[a][key]);
+				b = knobList[a][key];
+			}
+
+			if (key == 'price') {
+				price.knob = knobList[a][key];
+				considerPrice();
+			}
+		}
+		// console.log(b);
+
+		const item = document.querySelectorAll('.knob__item-img');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+		e.target.classList.add('border');
+
 		document.querySelector('.knobOut-result').remove();
 		let imgOut = document.createElement('img');
 		imgOut.className = 'resultOut__item knobOut-result';
-		imgOut.setAttribute('src', `./img/result/Внешняя Фурнитура/${a}`);
+		imgOut.setAttribute('src', `./img/result/Внешняя Фурнитура/${b}.png`);
 		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 		resultOut.append(imgOut);
 
 		document.querySelector('.knobIn-result').remove();
 		let imgIn = document.createElement('img');
 		imgIn.className = 'resultIn__item knobIn-result';
-		imgIn.setAttribute('src', `./img/result/Внутренняя Фурнитура/${a}`);
+		imgIn.setAttribute('src', `./img/result/Внутренняя Фурнитура/${b}.png`);
 		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 		resultIn.append(imgIn);
 	}
 
 });
 
-// for (let key in caseList[0]) {
-// 	if (key == 'name') {
-// 		console.log(caseList[0][key]);
-// 	}
-// }
+let price = {
+	case: 0,
+	outPanel: 0,
+	inPanel: 0,
+	knob: 0
+};
+
+let oldPrice = {
+	case: 0,
+	outPanel: 0,
+	inPanel: 0,
+	knob: 0
+};
+
+function considerPrice() {
+	const totalPrice = price.case + price.outPanel + price.inPanel + price.knob;
+	document.querySelector('.func__price').innerText = totalPrice;
+}
 
 
-showCaseApart();
-showCaseHouse();
+
+
+
+showCase();
+// showCaseHouse();
 
 showOutPanel();
 showInPanel();
 
 showKnob();
+
+
+considerPrice();

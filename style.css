@@ -184,7 +184,7 @@ a:hover {
 }
 
 .outPanel-box {
-	height: 430px;
+	height: 350px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -230,7 +230,7 @@ a:hover {
 }
 
 .inPanel-box {
-	height: 430px;
+	height: 350px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -276,7 +276,7 @@ a:hover {
 }
 
 .knob-box {
-	height: 430px;
+	height: 350px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -286,6 +286,7 @@ a:hover {
 	flex-wrap: wrap;
 	align-content: start;
 	padding: 5px;
+	margin-top: 5px;
 	display: none;
 }
 
@@ -347,6 +348,17 @@ a:hover {
 	font-size: 16px;
 }
 
+.box__text {
+	height: 40px;
+	width: 100%;
+	font-size: 20px;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 
 .result {
@@ -369,6 +381,34 @@ a:hover {
 	width: 100%;
 	height: 8%;
 	background-color: #eee;
+}
+
+.func__about {
+	display: inline-block;
+	width: 220px;
+	height: 100%;
+	background-color: #bbb;
+	margin: auto;
+	border-radius: 32px;
+	cursor: pointer;
+}
+
+.func__interior {
+	display: inline-block;
+	width: 220px;
+	height: 100%;
+	background-color: #ccc;
+	margin: auto;
+	border-radius: 32px;
+	cursor: pointer;
+}
+
+.func__price {
+	display: inline-block;
+	width: 220px;
+	height: 100%;
+	background-color: #eee;
+	margin: auto;
 }
 
 
@@ -435,12 +475,29 @@ a:hover {
 	z-index: auto;
 }
 
-.select-side__btns {
+.bot__btn-box {
 	display: flex;
 	width: 100%;
 	height: 8%;
 	background-color: #eee;
 }
+
+.bot__btn {
+	display: inline-flex;
+	margin: 0;
+	width: 25%;
+	height: 100%;
+	background-color: #bbb;
+	cursor: pointer;
+}
+
+.select-side__text {
+	margin: auto;
+	font-family: 'Merriweather', serif;
+	text-align: center;
+	font-size: 14px;
+}
+
 
 
 .case-inside {
@@ -473,21 +530,6 @@ a:hover {
 
 
 
-.border {
-	border: 3px solid #a76d50;
-}
-
-.none {
-	display: none;
-}
-
-.block {
-	display: block;
-}
-
-.flex {
-	display: flex;
-}
 
 .underlay {
 	/* display: none; */
@@ -495,7 +537,7 @@ a:hover {
 	position: absolute;
 	/* left: 0;
 	top: 0; */
-	height: 430px;
+	height: 350px;
 	width: 100%;
 	opacity: 0.6;
 	z-index: 100;
@@ -511,9 +553,25 @@ a:hover {
 	width: 100%;
 	/* opacity: 0.4; */
 	opacity: 1;
-	margin: 170px -5px -5px;
+	margin: 135px -5px -5px;
 	font-size: 40px;
 	text-align: center;
 	z-index: 100;
 	color: #fff;
+}
+
+.border {
+	border: 3px solid #a76d50;
+}
+
+.none {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+.flex {
+	display: flex;
 }
