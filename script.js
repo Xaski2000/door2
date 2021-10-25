@@ -1,4 +1,4 @@
-const caseList = [{
+const caseApartList = [{
 		name: 'М1',
 		desc: 'Корпус 1',
 		place: 'apartment',
@@ -25,8 +25,10 @@ const caseList = [{
 		place: 'apartment',
 		overPanel: false,
 		price: 2200
-	},
-	{
+	}
+];
+
+const caseHouseList = [{
 		name: 'М5',
 		desc: 'Корпус 1',
 		place: 'house',
@@ -253,23 +255,22 @@ knobBut.addEventListener('click', e => {
 
 
 function showCase() {
-	caseList.forEach((item, i) => {
-		if (item.place == 'apartment') {
+	caseApartList.forEach((item, i) => {
 			let div = document.createElement('div');
 			div.className = 'case__item';
 			div.setAttribute('data-src', i);
 			div.innerHTML = `	<p class="case__item-name">${item.name}</p>
 									<p class="case__item-desc">${item.desc}</p>`;
 			caseApart.append(div);
-		}
-		if (item.place == 'house') {
+	});
+
+	caseHouseList.forEach((item, i) => {
 			let div = document.createElement('div');
 			div.className = 'case__item';
 			div.setAttribute('data-src', i);
 			div.innerHTML = ` <p class="case__item-name">${item.name}</p>
 									<p class="case__item-desc">${item.desc}</p>`;
 			caseHouse.append(div);
-		}
 	});
 }
 
@@ -323,6 +324,197 @@ function caseBorder() {
 		});
 }
 
+function inPanelBorder() {
+	const item = document.querySelectorAll('.inPanel__item-img');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+}
+
+function outPanelBorder() {
+	const item = document.querySelectorAll('.outPanel__item-img');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+}
+
+function knobBorder() {
+	const item = document.querySelectorAll('.knob__item-img');
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+}
+
+function caseApartResult(a) {
+	under.style.display = 'none';
+	underText.style.display = 'none';
+
+	let b = '';
+
+	for (let key in caseApartList[a]) {
+		if (key == 'name') {
+			// console.log(caseApartList[a][key]);
+			b = caseApartList[a][key];
+		}
+
+		if (key == 'price') {
+			price.case = caseApartList[a][key];
+			considerPrice();
+		}
+
+		if (key == 'overPanel' && caseApartList[a][key] === true) {
+			// console.log(caseApartList[a][key]);
+			under.style.display = 'block';
+			underText.style.display = 'block';
+
+			oldPrice.outPanel = price.outPanel;
+			price.outPanel = 0;
+		}
+
+		if (key == 'overPanel' && caseApartList[a][key] === false) {
+			price.outPanel = oldPrice.outPanel;
+		}
+	}
+
+	// console.log(b);
+
+	document.querySelector('.case-result').remove();
+	let img = document.createElement('img');
+	img.className = 'resultOut__item case-result';
+	img.setAttribute('src', `./img/result/Корпуса/В квартиру/${b}.png`);
+	resultOut.append(img);
+
+	caseInside.style.display = 'block';
+}
+
+function caseHouseResult(a) {
+	under.style.display = 'none';
+	underText.style.display = 'none';
+
+	let b = '';
+
+	for (let key in caseHouseList[a]) {
+		if (key == 'name') {
+			// console.log(caseHouseList[a][key]);
+			b = caseHouseList[a][key];
+		}
+
+		if (key == 'price') {
+			price.case = caseHouseList[a][key];
+			considerPrice();
+		}
+
+		if (key == 'overPanel' && caseHouseList[a][key] === true) {
+			// console.log(caseHouseList[a][key]);
+			under.style.display = 'block';
+			underText.style.display = 'block';
+
+			oldPrice.outPanel = price.outPanel;
+			price.outPanel = 0;
+		}
+
+		if (key == 'overPanel' && caseHouseList[a][key] === false) {
+			price.outPanel = oldPrice.outPanel;
+		}
+	}
+	// console.log(b);
+
+	document.querySelector('.case-result').remove();
+	let img = document.createElement('img');
+	img.className = 'resultOut__item case-result';
+	img.setAttribute('src', `./img/result/Корпуса/В дом/${b}.png`);
+	resultOut.append(img);
+
+	caseInside.style.display = 'block';
+}
+
+function outPanelResult(a) {
+	let b = '';
+
+	for (let key in outPanelList[a]) {
+		if (key == 'name') {
+			// console.log(caseList[a][key]);
+			b = outPanelList[a][key];
+		}
+
+		if (key == 'price') {
+			price.outPanel = outPanelList[a][key];
+			considerPrice();
+		}
+	}
+	// console.log(b);
+
+
+	document.querySelector('.facingOut-result').remove();
+	let img = document.createElement('img');
+	img.className = 'resultOut__item facingOut-result';
+	img.setAttribute('src', `./img/result/Внешние панели/${b}.png`);
+	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
+	resultOut.append(img);
+
+	// inPanel.style.display = 'flex';
+}
+
+function inPanelResult(a) {
+	let b = '';
+
+	for (let key in inPanelList[a]) {
+		if (key == 'name') {
+			// console.log(caseList[a][key]);
+			b = inPanelList[a][key];
+		}
+
+		if (key == 'price') {
+			price.inPanel = inPanelList[a][key];
+			considerPrice();
+		}
+	}
+	// console.log(b);
+
+	document.querySelector('.facingIn-result').remove();
+	let img = document.createElement('img');
+	img.className = 'resultIn__item facingIn-result';
+	img.setAttribute('src', `./img/result/Внутренние панели/3Д фрезерованные 16мм/${b}.png`);
+	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
+	resultIn.append(img);
+
+
+	// knob.style.display = 'flex';
+}
+
+function knobResult(a) {
+	let b = '';
+
+	for (let key in knobList[a]) {
+		if (key == 'name') {
+			// console.log(caseList[a][key]);
+			b = knobList[a][key];
+		}
+
+		if (key == 'price') {
+			price.knob = knobList[a][key];
+			considerPrice();
+		}
+	}
+	// console.log(b);
+
+	document.querySelector('.knobOut-result').remove();
+	let imgOut = document.createElement('img');
+	imgOut.className = 'resultOut__item knobOut-result';
+	imgOut.setAttribute('src', `./img/result/Внешняя Фурнитура/${b}.png`);
+	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
+	resultOut.append(imgOut);
+
+	document.querySelector('.knobIn-result').remove();
+	let imgIn = document.createElement('img');
+	imgIn.className = 'resultIn__item knobIn-result';
+	imgIn.setAttribute('src', `./img/result/Внутренняя Фурнитура/${b}.png`);
+	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
+	resultIn.append(imgIn);
+}
+
+
+
 caseApart.addEventListener('click', e => {
 	let a = '';
 
@@ -349,45 +541,7 @@ caseApart.addEventListener('click', e => {
 
 	if (a != '')
 	{
-		under.style.display = 'none';
-		underText.style.display = 'none';
-
-		let b = '';
-
-		for (let key in caseList[a]) {
-			if (key == 'name') {
-				// console.log(caseList[a][key]);
-				b = caseList[a][key];
-			}
-
-			if (key == 'price') {
-				price.case = caseList[a][key];
-				considerPrice();
-			}
-
-			if (key == 'overPanel' && caseList[a][key] === true) {
-				// console.log(caseList[a][key]);
-				under.style.display = 'block';
-				underText.style.display = 'block';
-
-				oldPrice.outPanel = price.outPanel;
-				price.outPanel = 0;
-			}
-
-			if (key == 'overPanel' && caseList[a][key] === false) {
-				price.outPanel = oldPrice.outPanel;
-			}
-		}
-
-		// console.log(b);
-
-		document.querySelector('.case-result').remove();
-		let img = document.createElement('img');
-		img.className = 'resultOut__item case-result';
-		img.setAttribute('src', `./img/result/Корпуса/В квартиру/${b}.png`);
-		resultOut.append(img);
-
-		caseInside.style.display = 'block';
+		caseApartResult(a);
 	}
 
 });
@@ -422,50 +576,10 @@ caseHouse.addEventListener('click', e => {
 
 	if (a != '')
 	{
-		under.style.display = 'none';
-		underText.style.display = 'none';
-
-		let b = '';
-
-		for (let key in caseList[a]) {
-			if (key == 'name') {
-				// console.log(caseList[a][key]);
-				b = caseList[a][key];
-			}
-
-			if (key == 'price') {
-				price.case = caseList[a][key];
-				considerPrice();
-			}
-
-			if (key == 'overPanel' && caseList[a][key] === true) {
-				// console.log(caseList[a][key]);
-				under.style.display = 'block';
-				underText.style.display = 'block';
-
-				oldPrice.outPanel = price.outPanel;
-				price.outPanel = 0;
-			}
-
-			if (key == 'overPanel' && caseList[a][key] === false) {
-				price.outPanel = oldPrice.outPanel;
-			}
-		}
-		// console.log(b);
-
-		document.querySelector('.case-result').remove();
-		let img = document.createElement('img');
-		img.className = 'resultOut__item case-result';
-		img.setAttribute('src', `./img/result/Корпуса/В дом/${b}.png`);
-		resultOut.append(img);
-
-		caseInside.style.display = 'block';
+		caseHouseResult(a);
 	}
 
 });
-
-
-
 
 outPanel.addEventListener('click', e => {
 	let a = '';
@@ -473,41 +587,15 @@ outPanel.addEventListener('click', e => {
 	if (e.target && e.target.className == 'outPanel__item-img')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+
+		outPanelBorder();
+		e.target.classList.add('border');
 	}
 
 	if (a != '')
 	{
-		let b = '';
-
-		for (let key in outPanelList[a]) {
-			if (key == 'name') {
-				// console.log(caseList[a][key]);
-				b = outPanelList[a][key];
-			}
-
-			if (key == 'price') {
-				price.outPanel = outPanelList[a][key];
-				considerPrice();
-			}
-		}
-		// console.log(b);
-
-		const item = document.querySelectorAll('.outPanel__item-img');
-		item.forEach( e => {
-			e.classList.remove('border');
-		});
-		e.target.classList.add('border');
-
-		document.querySelector('.facingOut-result').remove();
-		let img = document.createElement('img');
-		img.className = 'resultOut__item facingOut-result';
-		img.setAttribute('src', `./img/result/Внешние панели/${b}.png`);
-		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
-		resultOut.append(img);
-
+		outPanelResult(a);
 		inButEvent();
-
-		// inPanel.style.display = 'flex';
 	}
 
 });
@@ -518,41 +606,16 @@ inPanel.addEventListener('click', e => {
 	if (e.target && e.target.className == 'inPanel__item-img')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+
+		inPanelBorder();
+		e.target.classList.add('border');
 	}
 
 	if (a != '')
 	{
-		let b = '';
-
-		for (let key in inPanelList[a]) {
-			if (key == 'name') {
-				// console.log(caseList[a][key]);
-				b = inPanelList[a][key];
-			}
-
-			if (key == 'price') {
-				price.inPanel = inPanelList[a][key];
-				considerPrice();
-			}
-		}
-		// console.log(b);
-
-		const item = document.querySelectorAll('.inPanel__item-img');
-		item.forEach( e => {
-			e.classList.remove('border');
-		});
-		e.target.classList.add('border');
-
-		document.querySelector('.facingIn-result').remove();
-		let img = document.createElement('img');
-		img.className = 'resultIn__item facingIn-result';
-		img.setAttribute('src', `./img/result/Внутренние панели/3Д фрезерованные 16мм/${b}.png`);
-		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
-		resultIn.append(img);
+		inPanelResult(a);
 
 		knobButEvent();
-
-		// knob.style.display = 'flex';
 	}
 
 });
@@ -564,44 +627,14 @@ knob.addEventListener('click', e => {
 	if (e.target && e.target.className == 'knob__item-img')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
+
+		knobBorder();
+		e.target.classList.add('border');
 	}
 
 	if (a != '')
 	{
-		let b = '';
-
-		for (let key in knobList[a]) {
-			if (key == 'name') {
-				// console.log(caseList[a][key]);
-				b = knobList[a][key];
-			}
-
-			if (key == 'price') {
-				price.knob = knobList[a][key];
-				considerPrice();
-			}
-		}
-		// console.log(b);
-
-		const item = document.querySelectorAll('.knob__item-img');
-		item.forEach( e => {
-			e.classList.remove('border');
-		});
-		e.target.classList.add('border');
-
-		document.querySelector('.knobOut-result').remove();
-		let imgOut = document.createElement('img');
-		imgOut.className = 'resultOut__item knobOut-result';
-		imgOut.setAttribute('src', `./img/result/Внешняя Фурнитура/${b}.png`);
-		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
-		resultOut.append(imgOut);
-
-		document.querySelector('.knobIn-result').remove();
-		let imgIn = document.createElement('img');
-		imgIn.className = 'resultIn__item knobIn-result';
-		imgIn.setAttribute('src', `./img/result/Внутренняя Фурнитура/${b}.png`);
-		// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
-		resultIn.append(imgIn);
+		knobResult(a);
 	}
 
 });
@@ -625,17 +658,87 @@ function considerPrice() {
 	document.querySelector('.func__price').innerText = totalPrice;
 }
 
+const randomBut = document.querySelector('.random-btn');
+
+randomBut.addEventListener('click', e => {
+
+	function randomCaseApart() {
+		const	itemParent = document.querySelector('.case-apartment'),
+				item = itemParent.querySelectorAll('.case__item'),
+				a = Math.floor(Math.random() * item.length);
+
+		caseBorder();
+		item[a].classList.add('border');
+
+		caseApartResult(a);
+	}
+
+	function randomCaseHouse() {
+		const	itemParent = document.querySelector('.case-house'),
+				item = itemParent.querySelectorAll('.case__item'),
+				a = Math.floor(Math.random() * item.length);
+
+		caseBorder();
+		item[a].classList.add('border');
+
+		caseHouseResult(a);
+	}
+
+	function randomOutPanel() {
+		const item = document.querySelectorAll('.outPanel__item-img'),
+		a = Math.floor(Math.random() * item.length);
+
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+		item[a].classList.add('border');
+
+		outPanelResult(a);
+	}
+
+	function randomInPanel() {
+		const item = document.querySelectorAll('.inPanel__item-img'),
+			a = Math.floor(Math.random() * item.length);
+
+
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+		item[a].classList.add('border');
+		// console.log(a);
+
+		inPanelResult(a);
+	}
+
+	function randomKnob() {
+		const item = document.querySelectorAll('.knob__item-img'),
+		a = Math.floor(Math.random() * item.length);
+
+		item.forEach( e => {
+			e.classList.remove('border');
+		});
+		item[a].classList.add('border');
+
+		knobResult(a);
+	}
 
 
 
+	randomOutPanel();
+
+	if (apartBut.classList.contains('border')) {
+		randomCaseApart();
+	} else {
+		randomCaseHouse();
+	}
+
+	randomInPanel();
+	randomKnob();
+});
 
 showCase();
-// showCaseHouse();
-
 showOutPanel();
 showInPanel();
-
 showKnob();
-
 
 considerPrice();

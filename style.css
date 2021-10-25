@@ -69,6 +69,7 @@ a:hover {
 	flex-wrap: wrap;
 }
 
+
 .where {
 	height: 120px;
 	width: 100%;
@@ -575,3 +576,57 @@ a:hover {
 .flex {
 	display: flex;
 }
+
+
+@media (max-width: 1200px) {
+	.wrapper {
+		position: relative;
+		display: flex;
+		max-height: 1600px;
+		height: auto;
+		width: 100%;
+		background-color: #eee;
+		margin: 50px auto auto;
+		flex-wrap: wrap;
+	}
+
+	.menu {
+		display: inline-block;
+		min-height: 100px;
+		height: 100%;
+		/* max-width: 510px; */
+		width: 100%;
+		background-color: #ccc;
+		margin-left: 0;
+		position: relative;
+	}
+
+	.result {
+		display: flex;
+		min-height: 100px;
+		height: 100%;
+		width: 100%;
+		background-color: #ccc;
+		margin: auto 0 auto auto;
+		flex-wrap: wrap;
+	}
+
+	.result-box {
+		display: flex;
+		-webkit-display: flex;
+		height: auto;
+		-webkit-height: auto;
+		/* height: 90%; */
+		width: 100%;
+		-webkit-width: 100%;
+	}
+	
+	.result-box::after {
+		content: '';
+		-webkit-content: '';
+		display: block;
+		-webkit-display: block;
+		padding-top: 100%;
+		-webkit-padding-top: 100%;
+	}
+ }
