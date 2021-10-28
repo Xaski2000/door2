@@ -160,7 +160,7 @@ const knobList = [
 ];
 
 const caseApart = document.querySelector('.case-apartment'),
-		caseHouse = document.querySelector('.case-house'),
+caseHouse = document.querySelector('.case-house'),
 		outPanel = document.querySelector('.outPanel-box'),
 		inPanel = document.querySelector('.inPanel-box'),
 		knob = document.querySelector('.knob-box'),
@@ -170,11 +170,12 @@ const caseApart = document.querySelector('.case-apartment'),
 		resultOut = document.querySelector('.resultOut'),
 		resultIn = document.querySelector('.resultIn');
 
-const apartBut = document.querySelector('.apartment'),
+		const apartBut = document.querySelector('.apartment'),
 		houseBut = document.querySelector('.house'),
 		outBut = document.querySelector('.button-out'),
 		inBut = document.querySelector('.button-in'),
-		knobBut = document.querySelector('.button-knob');
+		knobBut = document.querySelector('.button-knob'),
+		linkBtn = document.querySelector('.link-to-siteBtn');
 
 const caseInside = document.querySelector('.case-inside'),
 		under = document.querySelector('.underlay'),
@@ -351,10 +352,12 @@ function caseApartResult(a) {
 
 	let b = '';
 
+
 	for (let key in caseApartList[a]) {
 		if (key == 'name') {
 			// console.log(caseApartList[a][key]);
 			b = caseApartList[a][key];
+			linkToSite.case = caseApartList[a][key];
 		}
 
 		if (key == 'price') {
@@ -367,11 +370,14 @@ function caseApartResult(a) {
 			under.style.display = 'block';
 			underText.style.display = 'block';
 
+			linkToSite.casePanelType = true;
+
 			oldPrice.outPanel = price.outPanel;
 			price.outPanel = 0;
 		}
 
 		if (key == 'overPanel' && caseApartList[a][key] === false) {
+			linkToSite.casePanelType = false;
 			price.outPanel = oldPrice.outPanel;
 		}
 	}
@@ -397,6 +403,7 @@ function caseHouseResult(a) {
 		if (key == 'name') {
 			// console.log(caseHouseList[a][key]);
 			b = caseHouseList[a][key];
+			linkToSite.case = caseHouseList[a][key];
 		}
 
 		if (key == 'price') {
@@ -409,11 +416,14 @@ function caseHouseResult(a) {
 			under.style.display = 'block';
 			underText.style.display = 'block';
 
+			linkToSite.casePanelType = true;
+
 			oldPrice.outPanel = price.outPanel;
 			price.outPanel = 0;
 		}
 
 		if (key == 'overPanel' && caseHouseList[a][key] === false) {
+			linkToSite.casePanelType = false;
 			price.outPanel = oldPrice.outPanel;
 		}
 	}
@@ -435,6 +445,7 @@ function outPanelResult(a) {
 		if (key == 'name') {
 			// console.log(caseList[a][key]);
 			b = outPanelList[a][key];
+			linkToSite.outPanel = outPanelList[a][key];
 		}
 
 		if (key == 'price') {
@@ -1044,7 +1055,34 @@ document.querySelector('.high-price').addEventListener('click', e => {
 	maxPrice();
 });
 
+let linkToSite = {
+	case: '',
+	outPanel: '',
+	casePanelType: ''
+};
 
+
+function addLinkToSite() {
+	let totalLink2 = '';
+
+	linkToSite.case = linkToSite.case.replace(' ', '-');
+	linkToSite.outPanel = linkToSite.outPanel.replace(' ', '-');
+
+	if (linkToSite.casePanelType == true) {
+		totalLink2 = linkToSite.case.toLowerCase();
+	} else {
+		const totalLink = linkToSite.case + linkToSite.outPanel;
+		totalLink2 = totalLink.toLowerCase();
+	}
+
+
+	console.log(totalLink2);
+	linkBtn.setAttribute('href', `https://liono.ru/product/${totalLink2}`);
+}
+
+document.querySelector('.link-to-siteBtn').addEventListener('click', e => {
+	addLinkToSite();
+});
 
 showCase();
 showOutPanel();

@@ -20,6 +20,7 @@ a, p
 a:active,
 a:hover {
 	text-decoration: none;
+	color: #000;
 }
 
 
