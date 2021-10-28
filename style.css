@@ -620,7 +620,7 @@ a:hover {
 		width: 100%;
 		-webkit-width: 100%;
 	}
-	
+
 	.result-box::after {
 		content: '';
 		-webkit-content: '';
@@ -628,5 +628,22 @@ a:hover {
 		-webkit-display: block;
 		padding-top: 100%;
 		-webkit-padding-top: 100%;
+	}
+
+
+	.border {
+		border: 3px solid #a76d50;
+	}
+
+	.none {
+		display: none;
+	}
+
+	.block {
+		display: block;
+	}
+
+	.flex {
+		display: flex;
 	}
  }

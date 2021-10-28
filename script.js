@@ -3,28 +3,28 @@ const caseApartList = [{
 		desc: 'Корпус 1',
 		place: 'apartment',
 		overPanel: true,
-		price: 2200
+		price: 1900
 	},
 	{
 		name: 'М2',
 		desc: 'Корпус 1',
 		place: 'apartment',
 		overPanel: false,
-		price: 2200
+		price: 2100
 	},
 	{
 		name: 'М7',
 		desc: 'Корпус 1',
 		place: 'apartment',
 		overPanel: true,
-		price: 2200
+		price: 2220
 	},
 	{
 		name: 'Мерседес 2',
 		desc: 'Корпус 1',
 		place: 'apartment',
 		overPanel: false,
-		price: 2200
+		price: 2090
 	}
 ];
 
@@ -33,14 +33,14 @@ const caseHouseList = [{
 		desc: 'Корпус 1',
 		place: 'house',
 		overPanel: true,
-		price: 2200
+		price: 2100
 	},
 	{
 		name: 'М10',
 		desc: 'Корпус 1',
 		place: 'house',
 		overPanel: false,
-		price: 2200
+		price: 2000
 	}
 ];
 
@@ -48,7 +48,7 @@ const outPanelList = [
 	{
 		name: 'Бетон коричневый',
 		place: 'apartment',
-		price: 2200
+		price: 2100
 	},
 	{
 		name: 'Бетон',
@@ -68,7 +68,7 @@ const outPanelList = [
 	{
 		name: 'Ливерпуль',
 		place: 'apartment',
-		price: 2200
+		price: 2500
 	},
 	{
 		name: 'Лиственница темная',
@@ -111,7 +111,7 @@ const inPanelList = [
 	{
 		name: 'Кардинал',
 		place: 'apartment',
-		price: 2200
+		price: 2500
 	},
 	{
 		name: 'Круг светлая',
@@ -143,11 +143,11 @@ const inPanelList = [
 const knobList = [
 	{
 		name: 'FUARO Top XL (сатинированный хром)',
-		price: 2200
+		price: 2500
 	},
 	{
 		name: 'FUARO Top XL (хром)',
-		price: 2200
+		price: 2100
 	},
 	{
 		name: 'FUARO Top XL (черный)',
@@ -735,6 +735,316 @@ randomBut.addEventListener('click', e => {
 	randomInPanel();
 	randomKnob();
 });
+
+function minPrice() {
+	let caseApartArr = [];
+	let caseHouseArr = [];
+	let outPanelArr = [];
+	let inPanelArr = [];
+	let knobArr = [];
+
+	let ApartCaseNum = '';
+	let HouseCaseNum = '';
+	let outPanelNum = '';
+	let inPanelNum = '';
+	let knobNum = '';
+
+	let lowApartCaseNum = '',
+		 lowHouseCaseNum = '';
+
+	caseApartList.forEach((item, a) => {
+		for (let key in caseApartList[a]) {
+			if (key == 'price') {
+				caseApartArr[a] = caseApartList[a][key];
+			}
+		}
+		let lowApartCase = Math.min.apply(null, caseApartArr);
+		lowApartCaseNum = lowApartCase;
+		for (let key in caseApartList[a]) {
+
+			if (key == 'price' && lowApartCase == caseApartList[a][key]) {
+				ApartCaseNum = a;
+			}
+
+		}
+	});
+
+
+	caseHouseList.forEach((item, a) => {
+		for (let key in caseHouseList[a]) {
+			if (key == 'price') {
+				caseHouseArr[a] = caseHouseList[a][key];
+			}
+		}
+		let lowHouseCase = Math.min.apply(null, caseHouseArr);
+		lowHouseCaseNum = lowHouseCase;
+		for (let key in caseHouseList[a]) {
+			if (key == 'price' && lowHouseCase == caseHouseList[a][key]) {
+				HouseCaseNum = a;
+			}
+		}
+	});
+
+	outPanelList.forEach((item, a) => {
+		for (let key in outPanelList[a]) {
+			if (key == 'price') {
+				outPanelArr[a] = outPanelList[a][key];
+			}
+		}
+		let lowOutPanel = Math.min.apply(null, outPanelArr);
+		for (let key in outPanelList[a]) {
+			if (key == 'price' && lowOutPanel == outPanelList[a][key]) {
+				outPanelNum = a;
+			}
+		}
+	});
+
+	inPanelList.forEach((item, a) => {
+		for (let key in inPanelList[a]) {
+			if (key == 'price') {
+				inPanelArr[a] = inPanelList[a][key];
+			}
+		}
+		let lowInPanel = Math.min.apply(null, inPanelArr);
+		for (let key in inPanelList[a]) {
+			if (key == 'price' && lowInPanel == inPanelList[a][key]) {
+				inPanelNum = a;
+			}
+		}
+	});
+
+	knobList.forEach((item, a) => {
+		for (let key in knobList[a]) {
+			if (key == 'price') {
+				knobArr[a] = knobList[a][key];
+			}
+		}
+		let lowKnob = Math.min.apply(null, knobArr);
+		for (let key in knobList[a]) {
+			if (key == 'price' && lowKnob == knobList[a][key]) {
+				knobNum = a;
+			}
+		}
+	});
+
+
+	// console.log(ApartCaseNum);
+	// console.log(HouseCaseNum);
+	// console.log(outPanelNum);
+	// console.log(inPanelNum);
+	// console.log(knobNum);
+
+	if (lowApartCaseNum <= lowHouseCaseNum) {
+		caseApartResult(ApartCaseNum);
+		const itemParentApart = document.querySelector('.case-apartment'),
+		itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
+		itemApartCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		const itemParentHouse = document.querySelector('.case-house'),
+		itemHouseCaseNum = itemParentHouse.querySelectorAll('.case__item');
+		itemHouseCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		itemApartCaseNum[ApartCaseNum].classList.add('border');
+	} else {
+		caseHouseResult(HouseCaseNum);
+		const itemParentApart = document.querySelector('.case-apartment'),
+		itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
+		itemApartCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		const itemParentHouse = document.querySelector('.case-house'),
+		itemHouseCaseNum = itemParentHouse.querySelectorAll('.case__item');
+		itemHouseCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		itemHouseCaseNum[HouseCaseNum].classList.add('border');
+	}
+
+
+	outPanelResult(outPanelNum);
+	const itemoutPanelNum = document.querySelectorAll('.outPanel__item-img');
+	itemoutPanelNum.forEach( e => {
+		e.classList.remove('border');
+	});
+	itemoutPanelNum[outPanelNum].classList.add('border');
+
+	inPanelResult(inPanelNum);
+	const iteminPanelNum = document.querySelectorAll('.inPanel__item-img');
+	iteminPanelNum.forEach( e => {
+		e.classList.remove('border');
+	});
+	iteminPanelNum[inPanelNum].classList.add('border');
+
+	knobResult(knobNum);
+	const itemknobNum = document.querySelectorAll('.knob__item-img');
+	itemknobNum.forEach( e => {
+		e.classList.remove('border');
+	});
+	itemknobNum[knobNum].classList.add('border');
+
+}
+
+function maxPrice() {
+	let caseApartArr = [];
+	let caseHouseArr = [];
+	let outPanelArr = [];
+	let inPanelArr = [];
+	let knobArr = [];
+
+	let ApartCaseNum = '';
+	let HouseCaseNum = '';
+	let outPanelNum = '';
+	let inPanelNum = '';
+	let knobNum = '';
+
+	let lowApartCaseNum = '',
+		 lowHouseCaseNum = '';
+
+	caseApartList.forEach((item, a) => {
+		for (let key in caseApartList[a]) {
+			if (key == 'price') {
+				caseApartArr[a] = caseApartList[a][key];
+			}
+		}
+		let lowApartCase = Math.max.apply(null, caseApartArr);
+		lowApartCaseNum = lowApartCase;
+		for (let key in caseApartList[a]) {
+
+			if (key == 'price' && lowApartCase == caseApartList[a][key]) {
+				ApartCaseNum = a;
+			}
+
+		}
+	});
+
+
+	caseHouseList.forEach((item, a) => {
+		for (let key in caseHouseList[a]) {
+			if (key == 'price') {
+				caseHouseArr[a] = caseHouseList[a][key];
+			}
+		}
+		let lowHouseCase = Math.max.apply(null, caseHouseArr);
+		lowHouseCaseNum = lowHouseCase;
+		for (let key in caseHouseList[a]) {
+			if (key == 'price' && lowHouseCase == caseHouseList[a][key]) {
+				HouseCaseNum = a;
+			}
+		}
+	});
+
+	outPanelList.forEach((item, a) => {
+		for (let key in outPanelList[a]) {
+			if (key == 'price') {
+				outPanelArr[a] = outPanelList[a][key];
+			}
+		}
+		let lowOutPanel = Math.max.apply(null, outPanelArr);
+		for (let key in outPanelList[a]) {
+			if (key == 'price' && lowOutPanel == outPanelList[a][key]) {
+				outPanelNum = a;
+			}
+		}
+	});
+
+	inPanelList.forEach((item, a) => {
+		for (let key in inPanelList[a]) {
+			if (key == 'price') {
+				inPanelArr[a] = inPanelList[a][key];
+			}
+		}
+		let lowInPanel = Math.max.apply(null, inPanelArr);
+		for (let key in inPanelList[a]) {
+			if (key == 'price' && lowInPanel == inPanelList[a][key]) {
+				inPanelNum = a;
+			}
+		}
+	});
+
+	knobList.forEach((item, a) => {
+		for (let key in knobList[a]) {
+			if (key == 'price') {
+				knobArr[a] = knobList[a][key];
+			}
+		}
+		let lowKnob = Math.max.apply(null, knobArr);
+		for (let key in knobList[a]) {
+			if (key == 'price' && lowKnob == knobList[a][key]) {
+				knobNum = a;
+			}
+		}
+	});
+
+
+	// console.log(ApartCaseNum);
+	// console.log(HouseCaseNum);
+	// console.log(outPanelNum);
+	// console.log(inPanelNum);
+	// console.log(knobNum);
+
+	if (lowApartCaseNum >= lowHouseCaseNum) {
+		caseApartResult(ApartCaseNum);
+		const itemParentApart = document.querySelector('.case-apartment'),
+		itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
+		itemApartCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		const itemParentHouse = document.querySelector('.case-house'),
+		itemHouseCaseNum = itemParentHouse.querySelectorAll('.case__item');
+		itemHouseCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		itemApartCaseNum[ApartCaseNum].classList.add('border');
+	} else {
+		caseHouseResult(HouseCaseNum);
+		const itemParentApart = document.querySelector('.case-apartment'),
+		itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
+		itemApartCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		const itemParentHouse = document.querySelector('.case-house'),
+		itemHouseCaseNum = itemParentHouse.querySelectorAll('.case__item');
+		itemHouseCaseNum.forEach( e => {
+			e.classList.remove('border');
+		});
+		itemHouseCaseNum[HouseCaseNum].classList.add('border');
+	}
+
+
+	outPanelResult(outPanelNum);
+	const itemoutPanelNum = document.querySelectorAll('.outPanel__item-img');
+	itemoutPanelNum.forEach( e => {
+		e.classList.remove('border');
+	});
+	itemoutPanelNum[outPanelNum].classList.add('border');
+
+	inPanelResult(inPanelNum);
+	const iteminPanelNum = document.querySelectorAll('.inPanel__item-img');
+	iteminPanelNum.forEach( e => {
+		e.classList.remove('border');
+	});
+	iteminPanelNum[inPanelNum].classList.add('border');
+
+	knobResult(knobNum);
+	const itemknobNum = document.querySelectorAll('.knob__item-img');
+	itemknobNum.forEach( e => {
+		e.classList.remove('border');
+	});
+	itemknobNum[knobNum].classList.add('border');
+
+}
+
+document.querySelector('.low-price').addEventListener('click', e => {
+	minPrice();
+});
+
+document.querySelector('.high-price').addEventListener('click', e => {
+	maxPrice();
+});
+
+
 
 showCase();
 showOutPanel();
