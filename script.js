@@ -512,14 +512,14 @@ function knobResult(a) {
 	document.querySelector('.knobOut-result').remove();
 	let imgOut = document.createElement('img');
 	imgOut.className = 'resultOut__item knobOut-result';
-	imgOut.setAttribute('src', `./img/result/Внешняя Фурнитура/${b}.png`);
+	imgOut.setAttribute('src', `/img/result/Внешняя Фурнитура/${b}.png`);
 	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 	resultOut.append(imgOut);
 
 	document.querySelector('.knobIn-result').remove();
 	let imgIn = document.createElement('img');
 	imgIn.className = 'resultIn__item knobIn-result';
-	imgIn.setAttribute('src', `./img/result/Внутренняя Фурнитура/${b}.png`);
+	imgIn.setAttribute('src', `/img/result/Внутренняя Фурнитура/${b}.png`);
 	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 	resultIn.append(imgIn);
 }
