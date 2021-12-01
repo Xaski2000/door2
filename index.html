@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style111.css">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./adapt.css">
 	<title>Конструктор</title>
 </head>
 <body>
@@ -36,24 +37,24 @@
 				<p class="underlay__text none">Выберите другой корпус</p>
 			</div>
 
-			<p class="inPanel-box__text box__text">Внутренняя панель:</p>
+			<p class="inPanel-box__text box__text none">Внутренняя панель:</p>
 
 			<div class="inPanel-box">
 			</div>
 
-			<p class="knob-box__text box__text">Фурнитура:</p>
+			<p class="knob-box__text box__text none">Фурнитура:</p>
 
 			<div class="knob-box">
 			</div>
 
 			<div class="button-box">
-				<button class="button__item button-out none">
+				<button class="button__item button-out border none">
 					<p class="button__text">Выбор внешней панели</p>
 				</button>
-				<button class="button__item button-in">
+				<button class="button__item button-in border">
 					<p class="button__text">Выбор внутренней панели</p>
 				</button>
-				<button class="button__item button-knob none">
+				<button class="button__item button-knob border none">
 					<p class="button__text">Выбор фурнитуры</p>
 				</button>
 			</div>
@@ -74,50 +75,39 @@
 				<button class="func__interior">
 					<p class="func__interior-text">Вид в интерьере</p>
 				</button>
-				<p class="func__price"></p>
+				<p class="func__price">Цена:</p>
 			</div>
 			<div class="result-box">
 				<div class="resultOut">
 
 					<img src="./img/result/Внешний эскиз.png" class="result__specItem block">
 					<img src="./img/result/Корпуса/Внутренний.png" class="resultOut__item case-result none">
-
 					<img src="./img/result/Внешние панели/Бетон коричневый.png"
 						class="resultOut__item facingOut-result none">
-
 					<img alt="Фурнитура 1"
 						src="./img/result/Внешняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultOut__item knobOut-result none">
 
 				</div>
 				<div class="resultIn">
-
-
 					<img alt="Корпус 1" src="./img/result/Внутренний эскиз.png" class="result__specItem block">
-
 					<img src="./img/result/Корпуса/Внутренний.png" class="resultIn__item case-inside">
-
-
-
 					<img src="./img/result/Внутренние панели/3Д фрезерованные 16мм/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
-
-
-
 					<img alt="Фурнитура 1" src="./img/result/Внутренняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultIn__item knobIn-result none">
 
 				</div>
 			</div>
 			<div class="bot__btn-box">
 				<button class="bot__btn random-btn">
-					<p class="select-side__text">Случайная дверь</p>
+					<p class="bot__btn__text">Случайная дверь</p>
 				</button>
 				<button class="bot__btn low-price">
-					<p class="select-side__text">Самая дешевая дверь</p>
+					<p class="bot__btn__text">Самая дешевая дверь</p>
 				</button>
 				<button class="bot__btn high-price">
-					<p class="select-side__text">Самая дорогая дверь</p>
+					<p class="bot__btn__text">Самая дорогая дверь</p>
 				</button>
 				<a target="_blank" class="bot__btn link-to-siteBtn">
-					<p class="select-side__text link-to-site">Купить</p>
+					<p class="bot__btn__text link-to-site">Купить</p>
 				</a>
 			</div>
 		</div>

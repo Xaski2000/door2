@@ -212,8 +212,8 @@ function outButEvent() {
 	hideAll();
 	outBut.parentNode.style.justifyContent = 'end';
 
-	outPanel.style.display = 'block';
-	outPanelText.style.display = 'block';
+	outPanel.style.display = 'flex';
+	outPanelText.style.display = 'flex';
 
 	inBut.style.display = 'block';
 	outBut.style.display = 'none';
@@ -222,8 +222,9 @@ function outButEvent() {
 
 function inButEvent() {
 	hideAll();
-	inPanel.style.display = 'block';
-	inPanelText.style.display = 'block';
+	inBut.parentNode.style.justifyContent = 'space-between';
+	inPanel.style.display = 'flex';
+	inPanelText.style.display = 'flex';
 
 	knobBut.style.display = 'block';
 	outBut.style.display = 'block';
@@ -234,8 +235,8 @@ function knobButEvent() {
 	hideAll();
 	knobBut.parentNode.style.justifyContent = 'start';
 
-	knob.style.display = 'block';
-	knobText.style.display = 'block';
+	knob.style.display = 'flex';
+	knobText.style.display = 'flex';
 
 	inBut.style.display = 'block';
 	outBut.style.display = 'none';
@@ -371,14 +372,12 @@ function caseApartResult(a) {
 			underText.style.display = 'block';
 
 			linkToSite.casePanelType = true;
-
-			oldPrice.outPanel = price.outPanel;
-			price.outPanel = 0;
+			price.casePanelType = true;
 		}
 
 		if (key == 'overPanel' && caseApartList[a][key] === false) {
 			linkToSite.casePanelType = false;
-			price.outPanel = oldPrice.outPanel;
+			price.casePanelType = false;
 		}
 	}
 
@@ -417,14 +416,12 @@ function caseHouseResult(a) {
 			underText.style.display = 'block';
 
 			linkToSite.casePanelType = true;
-
-			oldPrice.outPanel = price.outPanel;
-			price.outPanel = 0;
+			price.casePanelType = true;
 		}
 
 		if (key == 'overPanel' && caseHouseList[a][key] === false) {
 			linkToSite.casePanelType = false;
-			price.outPanel = oldPrice.outPanel;
+			price.casePanelType = false;
 		}
 	}
 	// console.log(b);
@@ -515,8 +512,6 @@ function knobResult(a) {
 	imgOut.setAttribute('src', `./img/result/Внешняя фурнитура/${b}.png`);
 	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 	resultOut.append(imgOut);
-
-	console.log(b);
 
 	document.querySelector('.knobIn-result').remove();
 	let imgIn = document.createElement('img');
@@ -656,19 +651,19 @@ let price = {
 	case: 0,
 	outPanel: 0,
 	inPanel: 0,
-	knob: 0
-};
-
-let oldPrice = {
-	case: 0,
-	outPanel: 0,
-	inPanel: 0,
-	knob: 0
+	knob: 0,
+	casePanelType: ''
 };
 
 function considerPrice() {
-	const totalPrice = price.case + price.outPanel + price.inPanel + price.knob;
-	document.querySelector('.func__price').innerText = totalPrice;
+	if(price.casePanelType == true) {
+		const totalPrice = price.case + price.inPanel + price.knob;
+		document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+	} else {
+		const totalPrice = price.case + price.outPanel + price.inPanel + price.knob;
+		document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+	}
+
 }
 
 const randomBut = document.querySelector('.random-btn');
@@ -1078,7 +1073,7 @@ function addLinkToSite() {
 	}
 
 
-	console.log(totalLink2);
+	// console.log(totalLink2);
 	linkBtn.setAttribute('href', `https://liono.ru/product/${totalLink2}`);
 }
 
@@ -1090,5 +1085,3 @@ showCase();
 showOutPanel();
 showInPanel();
 showKnob();
-
-considerPrice();
