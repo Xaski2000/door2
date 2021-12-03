@@ -290,8 +290,9 @@ const knobList = [
 const caseApart = document.querySelector('.case-apartment'),
 		caseHouse = document.querySelector('.case-house'),
 		inPanel = document.querySelector('.inPanel'),
-		outPanel = document.querySelector('.outPanel-box'),
+		outPanel = document.querySelector('.outPanel'),
 		knob = document.querySelector('.knob-box'),
+		caseText = document.querySelector('.case-box__text'),
 		outPanelText = document.querySelector('.outPanel-box__text'),
 		inPanelText = document.querySelector('.inPanel-box__text'),
 		knobText = document.querySelector('.knob-box__text'),
@@ -304,7 +305,8 @@ const apartBut = document.querySelector('.apartment'),
 		inBut = document.querySelector('.button-in'),
 		knobBut = document.querySelector('.button-knob'),
 		linkBtn = document.querySelector('.link-to-siteBtn'),
-		randomBut = document.querySelector('.random-btn');
+		randomBut = document.querySelector('.random-btn'),
+		buttonBox = document.querySelector('.button-box');
 
 const caseInside = document.querySelector('.case-inside'),
 		under = document.querySelector('.underlay'),
@@ -312,12 +314,17 @@ const caseInside = document.querySelector('.case-inside'),
 
 const inPanelWrapper = document.querySelector('.inPanel-wrapper'),
 		inPanelTopBut = document.querySelector('.inPanel-topBut'),
-		inPanelBotBut = document.querySelector('.inPanel-botBut');
+		inPanelBotBut = document.querySelector('.inPanel-botBut'),
+		outPanelWrapper = document.querySelector('.outPanel-wrapper'),
+		outPanelTopBut = document.querySelector('.outPanel-topBut'),
+		outPanelBotBut = document.querySelector('.outPanel-botBut');
 
 
 apartBut.addEventListener('click', e => {
 	apartBut.classList.add('border');
 	houseBut.classList.remove('border');
+
+	caseText.style.display = 'flex';
 
 	caseApart.classList.add('flex');
 	caseHouse.classList.remove('flex');
@@ -326,6 +333,8 @@ apartBut.addEventListener('click', e => {
 houseBut.addEventListener('click', e => {
 	houseBut.classList.add('border');
 	apartBut.classList.remove('border');
+
+	caseText.style.display = 'flex';
 
 	caseHouse.classList.add('flex');
 	caseApart.classList.remove('flex');
@@ -409,15 +418,113 @@ function showCase() {
 	});
 }
 
+function createOutPanelBox1() {
+	if(outPanelList.length >= 10) {
+		const outPanelBox = document.querySelectorAll('.outPanel-box');
+		let div = document.createElement('div');
+		div.className = 'outPanel-box';
+		outPanelBox[0].after(div);
+
+		const outPanelDots = document.querySelectorAll('.outPanel-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'outPanel-dots__item';
+		outPanelDots[0].after(div1);
+	}
+}
+function createOutPanelBox2() {
+	if(outPanelList.length >= 19) {
+		const outPanelBox = document.querySelectorAll('.outPanel-box');
+		let div = document.createElement('div');
+		div.className = 'outPanel-box';
+		outPanelBox[1].after(div);
+
+		const outPanelDots = document.querySelectorAll('.outPanel-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'outPanel-dots__item';
+		outPanelDots[1].after(div1);
+	}
+}
+function createOutPanelBox3() {
+	if(outPanelList.length >= 28) {
+		const outPanelBox = document.querySelectorAll('.outPanel-box');
+		let div = document.createElement('div');
+		div.className = 'outPanel-box';
+		outPanelBox[2].after(div);
+
+		const outPanelDots = document.querySelectorAll('.outPanel-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'outPanel-dots__item';
+		outPanelDots[2].after(div1);
+	}
+}
+
 function showOutPanel() {
+	const outPanelBox = document.querySelectorAll('.outPanel-box');
 	outPanelList.forEach((item, i) => {
+		if(i < 8) {
 			let div = document.createElement('div');
 			div.className = 'outPanel__item';
 			div.setAttribute('data-src', i);
 			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
-			outPanel.append(div);
+			outPanelBox[0].append(div);
+		}
+
+		if(i > 7 && i < 16) {
+			let div = document.createElement('div');
+			div.className = 'outPanel__item';
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
+			outPanelBox[1].append(div);
+		}
+
+		if(i > 15 && i < 24) {
+			let div = document.createElement('div');
+			div.className = 'outPanel__item';
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
+			outPanelBox[2].append(div);
+		}
+
+		if(i > 23 && i < 32) {
+			let div = document.createElement('div');
+			div.className = 'outPanel__item';
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
+			outPanelBox[3].append(div);
+		}
 	});
 }
+
+let outPanelBoxNum = 0;
+
+function hideAllOutPanelBox() {
+	document.querySelectorAll('.outPanel-box').forEach((item, i) => {
+		item.style.display = 'none';
+	});
+	document.querySelectorAll('.outPanel-dots__item').forEach((item, i) => {
+		item.classList.remove('outPanel-dots__itemActive');
+	});
+}
+
+outPanelTopBut.addEventListener('click', e => {
+	if(outPanelBoxNum > 0) {
+		outPanelBoxNum = outPanelBoxNum - 1;
+		hideAllOutPanelBox();
+
+		document.querySelectorAll('.outPanel-box')[outPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.outPanel-dots__item')[outPanelBoxNum].classList.add('outPanel-dots__itemActive');
+	}
+});
+
+outPanelBotBut.addEventListener('click', e => {
+	if(outPanelBoxNum < document.querySelectorAll('.outPanel-box').length - 1) {
+		outPanelBoxNum = outPanelBoxNum + 1;
+		hideAllOutPanelBox();
+
+		document.querySelectorAll('.outPanel-box')[outPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.outPanel-dots__item')[outPanelBoxNum].classList.add('outPanel-dots__itemActive');
+	}
+});
 
 // function showInPanel() {
 // 	inPanelList.forEach((item, i) => {
@@ -488,17 +595,17 @@ inPanelTopBut.addEventListener('click', e => {
 		inPanelBoxNum = inPanelBoxNum - 1;
 		hideAllInPanelBox();
 
-		document.querySelectorAll('.inPanel-box')[inPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.inPanel-box')[inPanelBoxNum].style.display = 'flex';
 		document.querySelectorAll('.inPanel-dots__item')[inPanelBoxNum].classList.add('inPanel-dots__itemActive');
 	}
 });
 
 inPanelBotBut.addEventListener('click', e => {
-	if(inPanelBoxNum < 3) {
+	if(inPanelBoxNum < document.querySelectorAll('.inPanel-box').length - 1) {
 		inPanelBoxNum = inPanelBoxNum + 1;
 		hideAllInPanelBox();
 
-		document.querySelectorAll('.inPanel-box')[inPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.inPanel-box')[inPanelBoxNum].style.display = 'flex';
 		document.querySelectorAll('.inPanel-dots__item')[inPanelBoxNum].classList.add('inPanel-dots__itemActive');
 	}
 });
@@ -587,6 +694,10 @@ function caseApartResult(a) {
 	under.style.display = 'none';
 	underText.style.display = 'none';
 
+	inPanel.style.display = 'flex';
+	buttonBox.style.display = 'flex';
+	inPanelText.style.display = 'flex';
+
 	let b = '';
 
 
@@ -631,6 +742,10 @@ function caseApartResult(a) {
 function caseHouseResult(a) {
 	under.style.display = 'none';
 	underText.style.display = 'none';
+
+	inPanel.style.display = 'flex';
+	buttonBox.style.display = 'flex';
+	inPanelText.style.display = 'flex';
 
 	let b = '';
 
@@ -1326,6 +1441,10 @@ document.querySelector('.link-to-siteBtn').addEventListener('click', e => {
 createInPanelBox1();
 createInPanelBox2();
 createInPanelBox3();
+
+createOutPanelBox1();
+createOutPanelBox2();
+createOutPanelBox3();
 
 showCase();
 showOutPanel();

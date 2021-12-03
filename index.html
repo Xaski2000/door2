@@ -14,7 +14,7 @@
 		<div class="menu1">
 			<div class="where ">
 				<p class="where__text"><span>1.</span>Куда вы выбираете дверь?</p>
-				<button class="where__button apartment border">
+				<button class="where__button apartment">
 					<p>В квартиру</p>
 				</button>
 				<button class="where__button house">
@@ -22,9 +22,9 @@
 				</button>
 			</div>
 
-			<p class="case-box__text box__text"><span>2.</span>Выберите модель двери:</p>
+			<p class="case-box__text box__text none"><span>2.</span>Выберите модель двери:</p>
 
-			<div class="case-box case-apartment flex">
+			<div class="case-box case-apartment">
 			</div>
 			<div class="case-box case-house">
 			</div>
@@ -32,13 +32,13 @@
 
 			<p class="inPanel-box__text box__text"><span>3.</span>Внутренняя панель:</p>
 
-			<div class="inPanel">
+			<div class="inPanel none">
 				<div class="inPanel-dots">
 					<div class="inPanel-dots__item inPanel-dots__itemActive"></div>
 				</div>
 				<div class="inPanel-wrapper">
 					<button class="inPanel-but inPanel-topBut">Вверх</button>
-					<div class="inPanel-box block"></div>
+					<div class="inPanel-box flex"></div>
 					<button class="inPanel-but inPanel-botBut">Вниз</button>
 				</div>
 			</div>
@@ -48,18 +48,33 @@
 
 			<p class="outPanel-box__text box__text none"><span>4.</span>Внешняя панель:</p>
 
-			<div class="outPanel-box">
+			<div class="outPanel">
 				<div class="underlay none">
 				</div>
 				<p class="underlay__text none">Выберите другую модель</p>
+				<div class="outPanel-dots">
+					<div class="outPanel-dots__item outPanel-dots__itemActive"></div>
+				</div>
+				<div class="outPanel-wrapper">
+
+					<button class="outPanel-but outPanel-topBut">Вверх</button>
+					<div class="outPanel-box block"></div>
+					<button class="outPanel-but outPanel-botBut">Вниз</button>
+				</div>
 			</div>
+
+			<!-- <div class="outPanel-box">
+				<div class="underlay none">
+				</div>
+				<p class="underlay__text none">Выберите другую модель</p>
+			</div> -->
 
 			<p class="knob-box__text box__text none"><span>5.</span>Фурнитура:</p>
 
 			<div class="knob-box">
 			</div>
 
-			<div class="button-box">
+			<div class="button-box none">
 				<button class="button__item button-in border none">
 					<p class="button__text">Выбор внутренней панели</p>
 				</button>
@@ -92,13 +107,6 @@
 				</button>
 			</div>
 			<div class="result-box">
-				<div class="resultIn">
-					<img alt="Корпус 1" src="./img/result/Внутренний эскиз.png" class="result__specItem block">
-					<img src="./img/result/Корпуса/Внутренний.png" class="resultIn__item case-inside">
-					<img src="./img/result/Внутренние панели/3Д фрезерованные 16мм/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
-					<img alt="Фурнитура 1" src="./img/result/Внутренняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultIn__item knobIn-result none">
-
-				</div>
 				<div class="resultOut">
 
 					<img src="./img/result/Внешний эскиз.png" class="result__specItem block">
@@ -107,6 +115,13 @@
 					class="resultOut__item facingOut-result none">
 					<img alt="Фурнитура 1"
 					src="./img/result/Внешняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultOut__item knobOut-result none">
+
+				</div>
+				<div class="resultIn">
+					<img alt="Корпус 1" src="./img/result/Внутренний эскиз.png" class="result__specItem block">
+					<img src="./img/result/Корпуса/Внутренний.png" class="resultIn__item case-inside">
+					<img src="./img/result/Внутренние панели/3Д фрезерованные 16мм/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
+					<img alt="Фурнитура 1" src="./img/result/Внутренняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultIn__item knobIn-result none">
 
 				</div>
 			</div>

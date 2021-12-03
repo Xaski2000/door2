@@ -189,7 +189,7 @@ a:hover {
 	transition: all 0.3s;
 }
 
-.outPanel-box {
+/* .outPanel-box {
 	height: 380px;
 	width: 100%;
 	background-color: #f8f5f0;
@@ -202,6 +202,63 @@ a:hover {
 	padding: 5px;
 	margin-top: 5px;
 	display: none;
+} */
+
+.outPanel {
+	height: 380px;
+	width: 100%;
+	display: flex;
+	background-color: #f8f5f0;
+	margin-top: 5px;
+	display: none;
+}
+
+.outPanel-dots {
+	width: 20px;
+	height: 100%;
+	background-color: #aaa;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* flex-wrap: wrap; */
+}
+
+.outPanel-dots__item {
+	display: inline-block;
+	background-color: #eee;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.outPanel-dots__itemActive {
+	background-color: #000;
+}
+
+.outPanel-dots__item:first-child {
+	margin-top: 157px;
+}
+
+.outPanel-wrapper {
+	width: calc(100% - 20px);
+	height: 100%;
+	background-color: #bbb;
+	margin: auto;
+}
+
+.outPanel-box {
+	width: 100%;
+	height: 80%;
+	background-color: #ddd;
+	display: none;
+}
+
+
+.outPanel-but {
+	width: 100%;
+	height: 10%;
+	background-color: #ccc;
 }
 
 .outPanel__item {
@@ -261,7 +318,7 @@ a:hover {
 .inPanel-dots {
 	width: 20px;
 	height: 100%;
-	background-color: #aaa;
+	background-color: #f8f5f0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -270,7 +327,7 @@ a:hover {
 
 .inPanel-dots__item {
 	display: inline-block;
-	background-color: #eee;
+	background-color: #a76d50;
 	width: 11px;
 	height: 11px;
 	border-radius: 50%;
@@ -278,7 +335,7 @@ a:hover {
 }
 
 .inPanel-dots__itemActive {
-	background-color: #000;
+	background-color: #653C28;
 }
 
 .inPanel-dots__item:first-child {
@@ -288,33 +345,37 @@ a:hover {
 .inPanel-wrapper {
 	width: calc(100% - 20px);
 	height: 100%;
-	background-color: #bbb;
+	background-color: #f8f5f0;
 	margin: auto;
 }
 
 .inPanel-box {
 	width: 100%;
 	height: 80%;
-	background-color: #ddd;
+	background-color: #f8f5f0;
 	display: none;
+	flex-wrap: wrap;
+	/* align-items: center; */
 }
 
-.inPanel-box2 {
-	background-color: #999;
-}
 
 .inPanel-but {
 	width: 100%;
 	height: 10%;
-	background-color: #ccc;
+	background-color: #f8f5f0;
+	transition: all 0.3s;
+}
+
+.inPanel-but:hover {
+	background-color: #F1EADF;
 }
 
 
 .inPanel__item {
 	display: inline-flex;
-	width: 22%;
+	width: 23%;
 	height: auto;
-	margin: 5px 0 5px 3%;
+	margin: auto;
 	cursor: pointer;
 	position: relative;
 	scroll-snap-align: center;
@@ -424,6 +485,10 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.inPanel-box__text {
+	display: none;
 }
 
 
@@ -639,7 +704,7 @@ a:hover {
 	width: 100%;
 	opacity: 0.6;
 	z-index: 100;
-	margin: -5px -5px -5px -5px;
+	/* margin: -5px -5px -5px -5px; */
 }
 
 .underlay__text {
