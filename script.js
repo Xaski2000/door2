@@ -1,27 +1,27 @@
 const caseApartList = [{
-		name: 'М1',
-		desc: 'Корпус 1',
+		name: 'М1 3к',
+		desc: 'Одна панель',
 		place: 'apartment',
 		overPanel: true,
 		price: 1900
 	},
 	{
 		name: 'М2',
-		desc: 'Корпус 1',
+		desc: 'Две панели',
 		place: 'apartment',
 		overPanel: false,
 		price: 2100
 	},
 	{
 		name: 'М7',
-		desc: 'Корпус 1',
+		desc: 'Одна панель',
 		place: 'apartment',
 		overPanel: true,
 		price: 2220
 	},
 	{
-		name: 'Мерседес 2',
-		desc: 'Корпус 1',
+		name: 'М2 премиум',
+		desc: 'Две панели',
 		place: 'apartment',
 		overPanel: false,
 		price: 2090
@@ -30,14 +30,14 @@ const caseApartList = [{
 
 const caseHouseList = [{
 		name: 'М5',
-		desc: 'Корпус 1',
+		desc: 'Одна панель',
 		place: 'house',
 		overPanel: true,
 		price: 2100
 	},
 	{
 		name: 'М10',
-		desc: 'Корпус 1',
+		desc: 'Две панели',
 		place: 'house',
 		overPanel: false,
 		price: 2000
@@ -104,6 +104,134 @@ const outPanelList = [
 
 const inPanelList = [
 	{
+		name: 'Патрисия',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Круг темная',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Софи',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+	{
+		name: 'Версаль 3 патина',
+		place: 'apartment',
+		price: 2200
+	},
+
+
+
+	{
 		name: 'Версаль 3 патина',
 		place: 'apartment',
 		price: 2200
@@ -160,9 +288,9 @@ const knobList = [
 ];
 
 const caseApart = document.querySelector('.case-apartment'),
-caseHouse = document.querySelector('.case-house'),
+		caseHouse = document.querySelector('.case-house'),
+		inPanel = document.querySelector('.inPanel'),
 		outPanel = document.querySelector('.outPanel-box'),
-		inPanel = document.querySelector('.inPanel-box'),
 		knob = document.querySelector('.knob-box'),
 		outPanelText = document.querySelector('.outPanel-box__text'),
 		inPanelText = document.querySelector('.inPanel-box__text'),
@@ -170,17 +298,21 @@ caseHouse = document.querySelector('.case-house'),
 		resultOut = document.querySelector('.resultOut'),
 		resultIn = document.querySelector('.resultIn');
 
-		const apartBut = document.querySelector('.apartment'),
+const apartBut = document.querySelector('.apartment'),
 		houseBut = document.querySelector('.house'),
 		outBut = document.querySelector('.button-out'),
 		inBut = document.querySelector('.button-in'),
 		knobBut = document.querySelector('.button-knob'),
-		linkBtn = document.querySelector('.link-to-siteBtn');
+		linkBtn = document.querySelector('.link-to-siteBtn'),
+		randomBut = document.querySelector('.random-btn');
 
 const caseInside = document.querySelector('.case-inside'),
 		under = document.querySelector('.underlay'),
 		underText = document.querySelector('.underlay__text');
 
+const inPanelWrapper = document.querySelector('.inPanel-wrapper'),
+		inPanelTopBut = document.querySelector('.inPanel-topBut'),
+		inPanelBotBut = document.querySelector('.inPanel-botBut');
 
 
 apartBut.addEventListener('click', e => {
@@ -208,27 +340,28 @@ function hideAll() {
 	knobText.style.display = 'none';
 }
 
-function outButEvent() {
+function inButEvent() {
 	hideAll();
 	outBut.parentNode.style.justifyContent = 'end';
+
+	inPanel.style.display = 'flex';
+	inPanelText.style.display = 'flex';
+
+	knobBut.style.display = 'none';
+	outBut.style.display = 'block';
+	inBut.style.display = 'none';
+}
+
+function outButEvent() {
+	hideAll();
+	inBut.parentNode.style.justifyContent = 'space-between';
 
 	outPanel.style.display = 'flex';
 	outPanelText.style.display = 'flex';
 
 	inBut.style.display = 'block';
 	outBut.style.display = 'none';
-	knobBut.style.display = 'none';
-}
-
-function inButEvent() {
-	hideAll();
-	inBut.parentNode.style.justifyContent = 'space-between';
-	inPanel.style.display = 'flex';
-	inPanelText.style.display = 'flex';
-
 	knobBut.style.display = 'block';
-	outBut.style.display = 'block';
-	inBut.style.display = 'none';
 }
 
 function knobButEvent() {
@@ -238,8 +371,8 @@ function knobButEvent() {
 	knob.style.display = 'flex';
 	knobText.style.display = 'flex';
 
-	inBut.style.display = 'block';
-	outBut.style.display = 'none';
+	inBut.style.display = 'none';
+	outBut.style.display = 'block';
 	knobBut.style.display = 'none';
 }
 
@@ -276,19 +409,6 @@ function showCase() {
 	});
 }
 
-// function showCaseHouse() {
-// 	caseList.forEach((item, i) => {
-// 		if (item.place == 'house') {
-// 			let div = document.createElement('div');
-// 			div.className = 'case__item';
-// 			div.setAttribute('data-src', i);
-// 			div.innerHTML = ` <p class="case__item-name">${item.name}</p>
-// 									<p class="case__item-desc">${item.desc}</p>`;
-// 			caseHouse.append(div);
-// 		}
-// 	});
-// }
-
 function showOutPanel() {
 	outPanelList.forEach((item, i) => {
 			let div = document.createElement('div');
@@ -299,13 +419,125 @@ function showOutPanel() {
 	});
 }
 
+// function showInPanel() {
+// 	inPanelList.forEach((item, i) => {
+// 			let div = document.createElement('div');
+// 			div.className = 'inPanel__item';
+// 			div.setAttribute('data-src', i);
+// 			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
+// 			inPanel.append(div);
+// 	});
+// }
+
+
+
+
+function createInPanelBox1() {
+	if(inPanelList.length >= 10) {
+		const inPanelBox = document.querySelectorAll('.inPanel-box');
+		let div = document.createElement('div');
+		div.className = 'inPanel-box';
+		inPanelBox[0].after(div);
+
+		const inPanelDots = document.querySelectorAll('.inPanel-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'inPanel-dots__item';
+		inPanelDots[0].after(div1);
+	}
+}
+function createInPanelBox2() {
+	if(inPanelList.length >= 19) {
+		const inPanelBox = document.querySelectorAll('.inPanel-box');
+		let div = document.createElement('div');
+		div.className = 'inPanel-box';
+		inPanelBox[1].after(div);
+
+		const inPanelDots = document.querySelectorAll('.inPanel-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'inPanel-dots__item';
+		inPanelDots[1].after(div1);
+	}
+}
+function createInPanelBox3() {
+	if(inPanelList.length >= 28) {
+		const inPanelBox = document.querySelectorAll('.inPanel-box');
+		let div = document.createElement('div');
+		div.className = 'inPanel-box';
+		inPanelBox[2].after(div);
+
+		const inPanelDots = document.querySelectorAll('.inPanel-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'inPanel-dots__item';
+		inPanelDots[2].after(div1);
+	}
+}
+
+let inPanelBoxNum = 0;
+
+function hideAllInPanelBox() {
+	document.querySelectorAll('.inPanel-box').forEach((item, i) => {
+		item.style.display = 'none';
+	});
+	document.querySelectorAll('.inPanel-dots__item').forEach((item, i) => {
+		item.classList.remove('inPanel-dots__itemActive');
+	});
+}
+
+inPanelTopBut.addEventListener('click', e => {
+	if(inPanelBoxNum > 0) {
+		inPanelBoxNum = inPanelBoxNum - 1;
+		hideAllInPanelBox();
+
+		document.querySelectorAll('.inPanel-box')[inPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.inPanel-dots__item')[inPanelBoxNum].classList.add('inPanel-dots__itemActive');
+	}
+});
+
+inPanelBotBut.addEventListener('click', e => {
+	if(inPanelBoxNum < 3) {
+		inPanelBoxNum = inPanelBoxNum + 1;
+		hideAllInPanelBox();
+
+		document.querySelectorAll('.inPanel-box')[inPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.inPanel-dots__item')[inPanelBoxNum].classList.add('inPanel-dots__itemActive');
+	}
+});
+
+
 function showInPanel() {
+	const inPanelBox = document.querySelectorAll('.inPanel-box');
 	inPanelList.forEach((item, i) => {
+		if(i < 8) {
 			let div = document.createElement('div');
 			div.className = 'inPanel__item';
 			div.setAttribute('data-src', i);
 			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
-			inPanel.append(div);
+			inPanelBox[0].append(div);
+		}
+
+		if(i > 7 && i < 16) {
+			let div = document.createElement('div');
+			div.className = 'inPanel__item';
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
+			inPanelBox[1].append(div);
+		}
+
+		if(i > 15 && i < 24) {
+			let div = document.createElement('div');
+			div.className = 'inPanel__item';
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
+			inPanelBox[2].append(div);
+		}
+
+		if(i > 23 && i < 32) {
+			let div = document.createElement('div');
+			div.className = 'inPanel__item';
+			div.setAttribute('data-src', i);
+			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
+			inPanelBox[3].append(div);
+		}
 	});
 }
 
@@ -318,6 +550,8 @@ function showKnob() {
 			knob.append(div);
 	});
 }
+
+
 
 function caseBorder() {
 	const item = document.querySelectorAll('.case__item');
@@ -346,6 +580,8 @@ function knobBorder() {
 			e.classList.remove('border');
 		});
 }
+
+
 
 function caseApartResult(a) {
 	under.style.display = 'none';
@@ -589,26 +825,8 @@ caseHouse.addEventListener('click', e => {
 
 });
 
-outPanel.addEventListener('click', e => {
-	let a = '';
 
-	if (e.target && e.target.className == 'outPanel__item-img')
-	{
-		a = e.target.parentNode.getAttribute('data-src');
-
-		outPanelBorder();
-		e.target.classList.add('border');
-	}
-
-	if (a != '')
-	{
-		outPanelResult(a);
-		inButEvent();
-	}
-
-});
-
-inPanel.addEventListener('click', e => {
+inPanelWrapper.addEventListener('click', e => {
 	let a = '';
 
 	if (e.target && e.target.className == 'inPanel__item-img')
@@ -623,6 +841,25 @@ inPanel.addEventListener('click', e => {
 	{
 		inPanelResult(a);
 
+		outButEvent();
+	}
+
+});
+
+outPanel.addEventListener('click', e => {
+	let a = '';
+
+	if (e.target && e.target.className == 'outPanel__item-img')
+	{
+		a = e.target.parentNode.getAttribute('data-src');
+
+		outPanelBorder();
+		e.target.classList.add('border');
+	}
+
+	if (a != '')
+	{
+		outPanelResult(a);
 		knobButEvent();
 	}
 
@@ -656,17 +893,22 @@ let price = {
 };
 
 function considerPrice() {
-	if(price.casePanelType == true) {
-		const totalPrice = price.case + price.inPanel + price.knob;
-		document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+	document.querySelector('.func__price').innerText = `Цена:`;
+
+	if (price.casePanelType == true) {
+		if (price.case != 0 && price.inPanel != 0 && price.knob != 0) {
+			const totalPrice = price.case + price.inPanel + price.knob;
+			document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+		}
 	} else {
+		if (price.case != 0 && price.outPanel != 0 && price.inPanel != 0 && price.knob != 0) {
 		const totalPrice = price.case + price.outPanel + price.inPanel + price.knob;
 		document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+		}
 	}
 
 }
 
-const randomBut = document.querySelector('.random-btn');
 
 randomBut.addEventListener('click', e => {
 
@@ -1080,6 +1322,10 @@ function addLinkToSite() {
 document.querySelector('.link-to-siteBtn').addEventListener('click', e => {
 	addLinkToSite();
 });
+
+createInPanelBox1();
+createInPanelBox2();
+createInPanelBox3();
 
 showCase();
 showOutPanel();

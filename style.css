@@ -14,6 +14,8 @@ p {
 
 button {
 	border: none;
+	margin: 0;
+	padding: 0;
 }
 
 a, p
@@ -45,7 +47,7 @@ a:hover {
 .wrapper {
 	position: relative;
 	display: flex;
-	height: 800px;
+	height: 830px;
 	max-width: 1200px;
 	background-color: #fff;
 	margin: 50px auto auto;
@@ -188,7 +190,7 @@ a:hover {
 }
 
 .outPanel-box {
-	height: 350px;
+	height: 380px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -199,7 +201,7 @@ a:hover {
 	align-content: start;
 	padding: 5px;
 	margin-top: 5px;
-	display: flex;
+	display: none;
 }
 
 .outPanel__item {
@@ -233,8 +235,8 @@ a:hover {
 	transition: all 0.3s;
 }
 
-.inPanel-box {
-	height: 350px;
+/* .inPanel-box {
+	height: 380px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -245,8 +247,68 @@ a:hover {
 	align-content: start;
 	padding: 5px;
 	margin-top: 5px;
+	display: flex;
+} */
+
+.inPanel {
+	height: 380px;
+	width: 100%;
+	display: flex;
+	background-color: #f8f5f0;
+	margin-top: 5px;
+}
+
+.inPanel-dots {
+	width: 20px;
+	height: 100%;
+	background-color: #aaa;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* flex-wrap: wrap; */
+}
+
+.inPanel-dots__item {
+	display: inline-block;
+	background-color: #eee;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.inPanel-dots__itemActive {
+	background-color: #000;
+}
+
+.inPanel-dots__item:first-child {
+	margin-top: 157px;
+}
+
+.inPanel-wrapper {
+	width: calc(100% - 20px);
+	height: 100%;
+	background-color: #bbb;
+	margin: auto;
+}
+
+.inPanel-box {
+	width: 100%;
+	height: 80%;
+	background-color: #ddd;
 	display: none;
 }
+
+.inPanel-box2 {
+	background-color: #999;
+}
+
+.inPanel-but {
+	width: 100%;
+	height: 10%;
+	background-color: #ccc;
+}
+
 
 .inPanel__item {
 	display: inline-flex;
@@ -280,7 +342,7 @@ a:hover {
 }
 
 .knob-box {
-	height: 350px;
+	height: 380px;
 	width: 100%;
 	background-color: #f8f5f0;
 	overflow-y: auto;
@@ -378,17 +440,19 @@ a:hover {
 .func__btns {
 	display: flex;
 	width: 100%;
-	height: 8%;
+	height: 16%;
 	background-color: #fff;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .func__about {
 	display: inline-block;
-	width: 220px;
-	height: 100%;
-	background-color: #f8f5f0;
+	width: 48%;
+	height: 47%;
+	background-color: #fff;
+	border: 3px solid #a76d50;
 	margin: auto;
-	border-radius: 32px;
 	font-family: 'Jost', serif;
 	font-size: 18px;
 	cursor: pointer;
@@ -396,20 +460,40 @@ a:hover {
 
 .func__interior {
 	display: inline-block;
-	width: 220px;
-	height: 100%;
-	background-color: #f8f5f0;
+	width: 48%;
+	height: 47%;
 	font-family: 'Jost', serif;
 	font-size: 18px;
 	margin: auto;
-	border-radius: 32px;
+	background-color: #fff;
+	border: 3px solid #a76d50;
+	/* border-radius: 32px; */
 	cursor: pointer;
+}
+
+.func__link {
+	display: inline-flex;
+	margin: 0;
+	width: 48%;
+	height: 47%;
+	background-color: #fff;
+	font-size: 24px;
+	cursor: pointer;
+	margin: auto;
+	border: 3px solid #a76d50;
+}
+
+.func__link__text {
+	margin: auto;
+	font-family: 'Jost', serif;
+	text-align: center;
+	font-size: 24px;
 }
 
 .func__price {
 	display: inline-flex;
-	width: 220px;
-	height: 100%;
+	width: 48%;
+	height: 47%;
 	background-color: #fff;
 	font-family: 'Jost', serif;
 	font-size: 24px;
@@ -420,7 +504,7 @@ a:hover {
 
 .result-box {
 	display: flex;
-	height: 84%;
+	height: 76%;
 	width: 100%;
 }
 
@@ -497,12 +581,12 @@ a:hover {
 .bot__btn {
 	display: inline-flex;
 	margin: 0;
-	width: 23.5%;
+	width: 32%;
 	height: 100%;
-	background-color: #fff;
+	background-color: #f8f5f0;
+	border-radius: 32px;
 	cursor: pointer;
 	margin: auto;
-	border: 3px solid #a76d50;
 }
 
 .bot__btn__text {
@@ -551,7 +635,7 @@ a:hover {
 	position: absolute;
 	/* left: 0;
 	top: 0; */
-	height: 350px;
+	height: 380px;
 	width: 100%;
 	opacity: 0.6;
 	z-index: 100;
@@ -567,7 +651,7 @@ a:hover {
 	width: 100%;
 	/* opacity: 0.4; */
 	opacity: 1;
-	margin: 135px -5px -5px;
+	margin: 160px -5px -5px;
 	font-size: 40px;
 	text-align: center;
 	z-index: 100;

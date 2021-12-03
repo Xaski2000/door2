@@ -13,7 +13,7 @@
 	<div class="wrapper">
 		<div class="menu1">
 			<div class="where ">
-				<p class="where__text">Куда вы выбираете дверь?</p>
+				<p class="where__text"><span>1.</span>Куда вы выбираете дверь?</p>
 				<button class="where__button apartment border">
 					<p>В квартиру</p>
 				</button>
@@ -22,37 +22,49 @@
 				</button>
 			</div>
 
-			<p class="case-box__text box__text">Корпус:</p>
+			<p class="case-box__text box__text"><span>2.</span>Выберите модель двери:</p>
 
 			<div class="case-box case-apartment flex">
 			</div>
 			<div class="case-box case-house">
 			</div>
 
-			<p class="outPanel-box__text box__text">Внешняя панель:</p>
+
+			<p class="inPanel-box__text box__text"><span>3.</span>Внутренняя панель:</p>
+
+			<div class="inPanel">
+				<div class="inPanel-dots">
+					<div class="inPanel-dots__item inPanel-dots__itemActive"></div>
+				</div>
+				<div class="inPanel-wrapper">
+					<button class="inPanel-but inPanel-topBut">Вверх</button>
+					<div class="inPanel-box block"></div>
+					<button class="inPanel-but inPanel-botBut">Вниз</button>
+				</div>
+			</div>
+
+			<!-- <div class="inPanel-box">
+			</div> -->
+
+			<p class="outPanel-box__text box__text none"><span>4.</span>Внешняя панель:</p>
 
 			<div class="outPanel-box">
 				<div class="underlay none">
 				</div>
-				<p class="underlay__text none">Выберите другой корпус</p>
+				<p class="underlay__text none">Выберите другую модель</p>
 			</div>
 
-			<p class="inPanel-box__text box__text none">Внутренняя панель:</p>
-
-			<div class="inPanel-box">
-			</div>
-
-			<p class="knob-box__text box__text none">Фурнитура:</p>
+			<p class="knob-box__text box__text none"><span>5.</span>Фурнитура:</p>
 
 			<div class="knob-box">
 			</div>
 
 			<div class="button-box">
-				<button class="button__item button-out border none">
-					<p class="button__text">Выбор внешней панели</p>
-				</button>
-				<button class="button__item button-in border">
+				<button class="button__item button-in border none">
 					<p class="button__text">Выбор внутренней панели</p>
+				</button>
+				<button class="button__item button-out border">
+					<p class="button__text">Выбор внешней панели</p>
 				</button>
 				<button class="button__item button-knob border none">
 					<p class="button__text">Выбор фурнитуры</p>
@@ -68,34 +80,6 @@
 
 		</div>
 		<div class="result">
-			<div class="func__btns">
-				<button class="func__about">
-					<p class="func__about-text">Подробнее о модели</p>
-				</button>
-				<button class="func__interior">
-					<p class="func__interior-text">Вид в интерьере</p>
-				</button>
-				<p class="func__price">Цена:</p>
-			</div>
-			<div class="result-box">
-				<div class="resultOut">
-
-					<img src="./img/result/Внешний эскиз.png" class="result__specItem block">
-					<img src="./img/result/Корпуса/Внутренний.png" class="resultOut__item case-result none">
-					<img src="./img/result/Внешние панели/Бетон коричневый.png"
-						class="resultOut__item facingOut-result none">
-					<img alt="Фурнитура 1"
-						src="./img/result/Внешняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultOut__item knobOut-result none">
-
-				</div>
-				<div class="resultIn">
-					<img alt="Корпус 1" src="./img/result/Внутренний эскиз.png" class="result__specItem block">
-					<img src="./img/result/Корпуса/Внутренний.png" class="resultIn__item case-inside">
-					<img src="./img/result/Внутренние панели/3Д фрезерованные 16мм/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
-					<img alt="Фурнитура 1" src="./img/result/Внутренняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultIn__item knobIn-result none">
-
-				</div>
-			</div>
 			<div class="bot__btn-box">
 				<button class="bot__btn random-btn">
 					<p class="bot__btn__text">Случайная дверь</p>
@@ -106,9 +90,37 @@
 				<button class="bot__btn high-price">
 					<p class="bot__btn__text">Самая дорогая дверь</p>
 				</button>
-				<a target="_blank" class="bot__btn link-to-siteBtn">
-					<p class="bot__btn__text link-to-site">Купить</p>
+			</div>
+			<div class="result-box">
+				<div class="resultIn">
+					<img alt="Корпус 1" src="./img/result/Внутренний эскиз.png" class="result__specItem block">
+					<img src="./img/result/Корпуса/Внутренний.png" class="resultIn__item case-inside">
+					<img src="./img/result/Внутренние панели/3Д фрезерованные 16мм/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
+					<img alt="Фурнитура 1" src="./img/result/Внутренняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultIn__item knobIn-result none">
+
+				</div>
+				<div class="resultOut">
+
+					<img src="./img/result/Внешний эскиз.png" class="result__specItem block">
+					<img src="./img/result/Корпуса/Внутренний.png" class="resultOut__item case-result none">
+					<img src="./img/result/Внешние панели/Бетон коричневый.png"
+					class="resultOut__item facingOut-result none">
+					<img alt="Фурнитура 1"
+					src="./img/result/Внешняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultOut__item knobOut-result none">
+
+				</div>
+			</div>
+			<div class="func__btns">
+				<button class="func__about">
+					<p class="func__about-text">Подробнее о модели</p>
+				</button>
+				<button class="func__interior">
+					<p class="func__interior-text">Вид в интерьере</p>
+				</button>
+				<a target="_blank" class="func__link link-to-siteBtn">
+					<p class="func__link__text link-to-site">Купить</p>
 				</a>
+				<p class="func__price">Цена:</p>
 			</div>
 		</div>
 	</div>
