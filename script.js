@@ -297,7 +297,8 @@ const caseApart = document.querySelector('.case-apartment'),
 		inPanelText = document.querySelector('.inPanel-box__text'),
 		knobText = document.querySelector('.knob-box__text'),
 		resultOut = document.querySelector('.resultOut'),
-		resultIn = document.querySelector('.resultIn');
+		resultIn = document.querySelector('.resultIn'),
+		panelMenu = document.querySelector('.panelMenu');
 
 const apartBut = document.querySelector('.apartment'),
 		houseBut = document.querySelector('.house'),
@@ -319,8 +320,7 @@ const inPanelWrapper = document.querySelector('.inPanel-wrapper'),
 		outPanelTopBut = document.querySelector('.outPanel-topBut'),
 		outPanelBotBut = document.querySelector('.outPanel-botBut');
 
-
-apartBut.addEventListener('click', e => {
+function apartButFunc(){
 	apartBut.classList.add('border');
 	houseBut.classList.remove('border');
 
@@ -328,9 +328,13 @@ apartBut.addEventListener('click', e => {
 
 	caseApart.classList.add('flex');
 	caseHouse.classList.remove('flex');
+}
+
+apartBut.addEventListener('click', e => {
+	apartButFunc();
 });
 
-houseBut.addEventListener('click', e => {
+function houseButFunc(){
 	houseBut.classList.add('border');
 	apartBut.classList.remove('border');
 
@@ -338,6 +342,10 @@ houseBut.addEventListener('click', e => {
 
 	caseHouse.classList.add('flex');
 	caseApart.classList.remove('flex');
+}
+
+houseBut.addEventListener('click', e => {
+	houseButFunc();
 });
 
 function hideAll() {
@@ -511,7 +519,7 @@ outPanelTopBut.addEventListener('click', e => {
 		outPanelBoxNum = outPanelBoxNum - 1;
 		hideAllOutPanelBox();
 
-		document.querySelectorAll('.outPanel-box')[outPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.outPanel-box')[outPanelBoxNum].style.display = 'flex';
 		document.querySelectorAll('.outPanel-dots__item')[outPanelBoxNum].classList.add('outPanel-dots__itemActive');
 	}
 });
@@ -521,7 +529,7 @@ outPanelBotBut.addEventListener('click', e => {
 		outPanelBoxNum = outPanelBoxNum + 1;
 		hideAllOutPanelBox();
 
-		document.querySelectorAll('.outPanel-box')[outPanelBoxNum].style.display = 'block';
+		document.querySelectorAll('.outPanel-box')[outPanelBoxNum].style.display = 'flex';
 		document.querySelectorAll('.outPanel-dots__item')[outPanelBoxNum].classList.add('outPanel-dots__itemActive');
 	}
 });
@@ -694,9 +702,9 @@ function caseApartResult(a) {
 	under.style.display = 'none';
 	underText.style.display = 'none';
 
-	inPanel.style.display = 'flex';
+	panelMenu.style.display = 'block';
 	buttonBox.style.display = 'flex';
-	inPanelText.style.display = 'flex';
+	// inPanelText.style.display = 'flex';
 
 	let b = '';
 
@@ -743,9 +751,9 @@ function caseHouseResult(a) {
 	under.style.display = 'none';
 	underText.style.display = 'none';
 
-	inPanel.style.display = 'flex';
+	panelMenu.style.display = 'block';
 	buttonBox.style.display = 'flex';
-	inPanelText.style.display = 'flex';
+	// inPanelText.style.display = 'flex';
 
 	let b = '';
 
@@ -1026,7 +1034,7 @@ function considerPrice() {
 
 
 randomBut.addEventListener('click', e => {
-
+	apartButFunc();
 	function randomCaseApart() {
 		const	itemParent = document.querySelector('.case-apartment'),
 				item = itemParent.querySelectorAll('.case__item'),
@@ -1116,6 +1124,8 @@ function minPrice() {
 
 	let lowApartCaseNum = '',
 		 lowHouseCaseNum = '';
+
+	apartButFunc();
 
 	caseApartList.forEach((item, a) => {
 		for (let key in caseApartList[a]) {
@@ -1266,6 +1276,8 @@ function maxPrice() {
 
 	let lowApartCaseNum = '',
 		 lowHouseCaseNum = '';
+
+	apartButFunc();
 
 	caseApartList.forEach((item, a) => {
 		for (let key in caseApartList[a]) {

@@ -207,7 +207,7 @@ a:hover {
 .outPanel {
 	height: 380px;
 	width: 100%;
-	display: flex;
+	/* display: flex; */
 	background-color: #f8f5f0;
 	margin-top: 5px;
 	display: none;
@@ -216,7 +216,7 @@ a:hover {
 .outPanel-dots {
 	width: 20px;
 	height: 100%;
-	background-color: #aaa;
+	background-color: #f8f5f0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -225,7 +225,7 @@ a:hover {
 
 .outPanel-dots__item {
 	display: inline-block;
-	background-color: #eee;
+	background-color: #a76d50;
 	width: 11px;
 	height: 11px;
 	border-radius: 50%;
@@ -233,7 +233,7 @@ a:hover {
 }
 
 .outPanel-dots__itemActive {
-	background-color: #000;
+	background-color: #653C28;
 }
 
 .outPanel-dots__item:first-child {
@@ -243,29 +243,35 @@ a:hover {
 .outPanel-wrapper {
 	width: calc(100% - 20px);
 	height: 100%;
-	background-color: #bbb;
+	background-color: #f8f5f0;
 	margin: auto;
 }
 
 .outPanel-box {
+	padding: 5px;
 	width: 100%;
 	height: 80%;
-	background-color: #ddd;
+	background-color: #f8f5f0;
 	display: none;
+	flex-wrap: wrap;
 }
 
 
 .outPanel-but {
 	width: 100%;
 	height: 10%;
-	background-color: #ccc;
+	background-color: #f8f5f0;
+}
+
+.outPanel-but:hover {
+	background-color: #F1EADF;
 }
 
 .outPanel__item {
 	display: inline-flex;
 	width: 22%;
 	height: auto;
-	margin: 5px 0 5px 3%;
+	margin: auto;
 	cursor: pointer;
 	position: relative;
 	scroll-snap-align: center;
@@ -350,6 +356,7 @@ a:hover {
 }
 
 .inPanel-box {
+	padding: 5px;
 	width: 100%;
 	height: 80%;
 	background-color: #f8f5f0;
@@ -485,10 +492,6 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.inPanel-box__text {
-	display: none;
 }
 
 
