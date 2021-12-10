@@ -204,6 +204,10 @@ a:hover {
 	display: none;
 } */
 
+.panelMenu {
+	display: none;
+}
+
 .outPanel {
 	height: 380px;
 	width: 100%;
