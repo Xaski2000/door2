@@ -63,6 +63,23 @@ a:hover {
 		flex-wrap: wrap;
 	}
 
+	.int-modal__wrapper {
+		width: 90%;
+	}
+
+	.int-modal__close {
+		position: absolute;
+		/* right: 32px;
+		top: 32px; */
+		margin: -40% auto auto auto;
+		top: 50%;
+		left: 95%;
+		width: 40px;
+		height: 40px;
+		opacity: 1;
+		background-color: #eee;
+	}
+
 	.menu1 {
 		display: inline-block;
 		min-height: 100px;
@@ -202,6 +219,29 @@ a:hover {
  }
 
 @media (max-width: 575px) {
+	.desc-modal__box {
+		width: 300px;
+	}
+
+	.desc-modal__close {
+		margin: -75% auto auto auto;
+		width: 30px;
+		height: 30px;
+	}
+
+	.int-modal__close {
+		position: absolute;
+		/* right: 32px;
+		top: 32px; */
+		margin: -50% auto auto auto;
+		top: 50%;
+		left: 92%;
+		width: 40px;
+		height: 40px;
+		opacity: 1;
+		background-color: #eee;
+	}
+
 	.result {
 		margin-top: 15px;
 	}
@@ -268,6 +308,10 @@ a:hover {
 		cursor: pointer;
 	}
 
+	.button-out {
+		width: 100%;
+	}
+
 	.button__text {
 		font-size: 16px;
 		font-family: 'Jost', serif;
@@ -308,7 +352,7 @@ a:hover {
 		height: 45%;
 		background-color: #fff;
 		font-family: 'Jost', serif;
-		font-size: 16px;
+		font-size: 20px;
 		margin: auto;
 		align-items: center;
 		justify-content: center;

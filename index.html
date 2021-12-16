@@ -10,6 +10,24 @@
 </head>
 <body>
 	<main>
+	<div class="desc-modal">
+		<div class="desc-modal__underlay"></div>
+		<div class="desc-modal__box">
+		<span class="desc-modal__close"></span>
+		<p class="desc-modal__text"></p>
+		</div>
+	</div>
+	<div class="int-modal">
+		<div class="int-modal__underlay"></div>
+			<div class="int-modal__wrapper">
+				<div class="int-modal__close-box">
+					<span alt="" class="int-modal__close"></span>
+					<!-- <div class="wallpaper__x"></div> -->
+				</div>
+				<img class="int-modal__img"src="./img/result/Интерьер3.jpg">
+				<div class="int-modal__box"></div>
+		</div>
+	</div>
 	<div class="wrapper">
 		<div class="menu1">
 			<div class="where ">
@@ -33,14 +51,18 @@
 				<p class="inPanel-box__text box__text"><span>3.</span>Внутренняя панель:</p>
 
 				<div class="inPanel">
-					<div class="inPanel-dots">
-						<div class="inPanel-dots__item inPanel-dots__itemActive"></div>
-					</div>
 					<div class="inPanel-wrapper">
-						<button class="inPanel-but inPanel-topBut">Вверх</button>
-						<div class="inPanel-box flex"></div>
-						<button class="inPanel-but inPanel-botBut">Вниз</button>
+						<button class="inPanel-but inPanel-topBut">
+							<img src="./img/Стрелка.svg" alt="" class="inPanel-but-img">
+						</button>
+						<div class="inPanel-dots">
+							<div class="inPanel-dots__item inPanel-dots__itemActive"></div>
+						</div>
+						<button class="inPanel-but inPanel-botBut">
+							<img style="transform: rotate(180deg);" src="./img/Стрелка.svg" alt="" class="inPanel-but-img">
+						</button>
 					</div>
+					<div class="inPanel-box flex"></div>
 				</div>
 
 				<p class="outPanel-box__text box__text none"><span>4.</span>Внешняя панель:</p>
@@ -107,7 +129,7 @@
 				<div class="resultIn">
 					<img alt="Корпус 1" src="./img/result/Внутренний эскиз.png" class="result__specItem block">
 					<img src="./img/result/Корпуса/Внутренний.png" class="resultIn__item case-inside">
-					<img src="./img/result/Внутренние панели/3Д фрезерованные 16мм/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
+					<img src="./img/result/Внутренние панели/Версаль 3 патина.png" class="resultIn__item facingIn-result none">
 					<img alt="Фурнитура 1" src="./img/result/Внутренняя фурнитура/FUARO Top XL (сатинированный хром).png" class="resultIn__item knobIn-result none">
 
 				</div>

@@ -2,29 +2,65 @@ const caseApartList = [{
 		name: 'М1 3к',
 		desc: 'Одна панель',
 		place: 'apartment',
-		overPanel: true,
-		price: 1900
+		overPanel: false,
+		about: 'Петли осевые, 3 контура уплотнения, МЕТАЛЛ 1,4 мм, коробка 135 мм, полотно 105-115мм, утеплитель мин.вата и пенополистирол, 2 замка Гардиан 3 серии d ригелей 16 мм, ночная задвижка, цилиндр перфо ключ -верт. Эксцентрик, покрытие: черный муар с блесткой.',
+		price: {
+			milled6: 25805,
+			milled16: 26845,
+			milled16Glass: 26975,
+			DDDmilled16: 30459,
+			build20First: 28171,
+			build20Second: 28340,
+			build20Third: 28665
+		}
 	},
 	{
 		name: 'М2',
 		desc: 'Две панели',
 		place: 'apartment',
 		overPanel: false,
-		price: 2100
+		about: 'Петли осевые, 3 контура уплотнения, МЕТАЛЛ 1,4 мм, коробка 135 мм, полотно 105-115мм, утеплитель мин.вата и пенополистирол, 2 замка Гардиан 3 серии d ригелей 16 мм, покрытие: черный муар с блесткой, с внеш.стороны панель МДФ , эксцентрик',
+		price: {
+			milled6: 28028,
+			milled16: 29055,
+			milled16Glass: 29315,
+			DDDmilled16: 32825,
+			build20First: 30394,
+			build20Second: 30615,
+			build20Third: 30888
+		}
 	},
 	{
 		name: 'М7',
 		desc: 'Одна панель',
 		place: 'apartment',
 		overPanel: true,
-		price: 2220
+		about: 'Петли Барк, 3 контура уплотнения, МЕТАЛЛ 1,5 мм, закрытая утепленная коробка 115 мм, полотно 95-105 мм, утеплитель базальтовая плита, 2 замка: Бордер 5 ригелей d 18 мм, Фуаро 3 ригеля d 16 мм, цилиндр перфо, покрытие: муар мокко, эксцентрик',
+		price: {
+			milled6: 27040,
+			milled16: 28210,
+			milled16Glass: 28340,
+			DDDmilled16: 31850,
+			build20First: 29510,
+			build20Second: 29445,
+			build20Third: 29835
+		}
 	},
 	{
-		name: 'М2 премиум',
+		name: 'Мерседес 2',
 		desc: 'Две панели',
 		place: 'apartment',
 		overPanel: false,
-		price: 2090
+		about: '3 осевые петли, 3 контура уплотнения,МЕТАЛЛ 2 мм, коробка 135 мм, полотно 105-115 мм, утеплитель мин.вата, пенополистирол, замок сувальд. и цил.: Бордер professional, d 18 мм, броненакладка. порог матовая нерж. покрытие: черный муар с блесткой. эксцентрик* ',
+		price: {
+			milled6: 34970,
+			milled16: 36140,
+			milled16Glass: 36400,
+			DDDmilled16: 39520,
+			build20First: 38090,
+			build20Second: 37700,
+			build20Third: 37960
+		}
 	}
 ];
 
@@ -33,14 +69,32 @@ const caseHouseList = [{
 		desc: 'Одна панель',
 		place: 'house',
 		overPanel: true,
-		price: 2100
+		about: 'Петли осевые, 3 контура уплотнения (1 магнитный), МЕТАЛЛ 1,5 мм, Пластиковый двухкамерный Терморазрыв на коробе и полотне, коробка 165 мм, полотно 100-110 мм, 2 сувальд. замка d ригелей 18 и 16 мм, авто накладки, порог матовая нержавейка, покрытие: цинкогрунт + черный муар с блесткой',
+		price: {
+			milled6: 34710,
+			milled16: 35880,
+			milled16Glass: 36140,
+			DDDmilled16: 40014,
+			build20First: 36790,
+			build20Second: 37440,
+			build20Third: 37830
+		}
 	},
 	{
 		name: 'М10',
 		desc: 'Две панели',
 		place: 'house',
 		overPanel: false,
-		price: 2000
+		about: 'петли осевые, 3 контура уплотнения (1 магнитный), МЕТАЛЛ 1,5 мм, Пластиковый двухкамерный Терморазрыв на коробе и полотне, коробка 165 мм, полотно 115-125 мм, 2 сувальд. замка d ригелей 18 и 16 мм, авто накладки, порог матовая нержавейка, покрытие: цинкогрунт + черный муар с блесткой',
+		price: {
+			milled6: 39520,
+			milled16: 40820,
+			milled16Glass: 40950,
+			DDDmilled16: 44850,
+			build20First: 41860,
+			build20Second: 42250,
+			build20Third: 42640
+		}
 	}
 ];
 
@@ -48,27 +102,27 @@ const outPanelList = [
 	{
 		name: 'Бетон коричневый',
 		place: 'apartment',
-		price: 2100
+		price: 3400
 	},
 	{
 		name: 'Бетон',
 		place: 'apartment',
-		price: 2200
+		price: 3400
 	},
 	{
 		name: 'Венге серый',
 		place: 'apartment',
-		price: 2200
+		price: 1900
 	},
 	{
 		name: 'Круг',
 		place: 'apartment',
-		price: 2200
+		price: 6200
 	},
 	{
 		name: 'Ливерпуль',
 		place: 'apartment',
-		price: 2500
+		price: 4950
 	},
 	{
 		name: 'Лиственница темная',
@@ -76,214 +130,246 @@ const outPanelList = [
 		price: 2200
 	},
 	{
+		name: 'Лорд',
+		place: 'apartment',
+		price: 3300
+	},
+	{
 		name: 'М1',
 		place: 'apartment',
-		price: 2200
+		price: 100
 	},
 	{
 		name: 'М5',
 		place: 'apartment',
-		price: 2200
+		price: 100
 	},
 	{
 		name: 'М7',
 		place: 'apartment',
-		price: 2200
+		price: 100
 	},
 	{
 		name: 'Мадрид',
 		place: 'apartment',
-		price: 2200
+		price: 6200
 	},
 	{
 		name: 'Штукатурка',
 		place: 'apartment',
-		price: 2200
+		price: 6200
 	}
 ];
 
 const inPanelList = [
 	{
-		name: 'Патрисия',
-		place: 'apartment',
-		price: 2200
+		name: 'Вега',
+		form: 'milled6'
+	},
+	{
+		name: 'Геометрия',
+		form: 'milled6'
+	},
+	{
+		name: 'Лайн',
+		form: 'milled6'
+	},
+	{
+		name: 'Параллель венге',
+		form: 'milled6'
+	},
+	{
+		name: 'Параллель светлая',
+		form: 'milled6'
+	},
+	{
+		name: 'Токио бетон',
+		form: 'milled6'
+	},
+	{
+		name: 'Фреш',
+		form: 'milled6'
+	},
+	{
+		name: 'Экопатина',
+		form: 'milled6'
+	},
+	{
+		name: 'Афина шоколад',
+		form: 'milled16'
+	},
+	{
+		name: 'Версаль 2 дуб турин',
+		form: 'milled16'
+	},
+	{
+		name: 'Версаль 2 светлая',
+		form: 'milled16'
+	},
+	{
+		name: 'Версаль светлый',
+		form: 'milled16'
+	},
+	{
+		name: 'Версаль софт',
+		form: 'milled16'
+	},
+	{
+		name: 'Версаль темная',
+		form: 'milled16'
+	},
+	{
+		name: 'Вертикаль 5 софт белая',
+		form: 'milled16Glass'
+	},
+	{
+		name: 'Вертикаль венге',
+		form: 'milled16Glass'
+	},
+	{
+		name: 'Вертикаль кедр серый',
+		form: 'milled16Glass'
+	},
+	{
+		name: 'Вертикаль светлая',
+		form: 'milled16Glass'
+	},
+	{
+		name: 'Геометрия 2 снежное дерево',
+		form: 'milled16Glass'
+	},
+	{
+		name: 'Италия',
+		form: 'milled16'
+	},
+	{
+		name: 'Канцлер',
+		form: 'milled16'
+	},
+	{
+		name: 'Классика',
+		form: 'milled16Glass'
+	},
+	{
+		name: 'Кристалл',
+		form: 'milled16'
+	},
+	{
+		name: 'Лорд венге',
+		form: 'milled16'
+	},
+	{
+		name: 'Лорд орех светлый',
+		form: 'milled16'
+	},
+	{
+		name: 'Нова',
+		form: 'milled16'
+	},
+	{
+		name: 'Сенатор орех тисненный',
+		form: 'milled16'
+	},
+	{
+		name: 'Сенатор сосна',
+		form: 'milled16'
 	},
 	{
 		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Круг темная',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Софи',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
-	},
-
-
-
-	{
-		name: 'Версаль 3 патина',
-		place: 'apartment',
-		price: 2200
+		form: 'DDDmilled16'
 	},
 	{
 		name: 'Кардинал',
-		place: 'apartment',
-		price: 2500
+		form: 'DDDmilled16'
 	},
 	{
 		name: 'Круг светлая',
-		place: 'apartment',
-		price: 2200
+		form: 'DDDmilled16'
 	},
 	{
 		name: 'Круг темная',
-		place: 'apartment',
-		price: 2200
+		form: 'DDDmilled16'
 	},
 	{
 		name: 'Патрисия',
-		place: 'apartment',
-		price: 2200
+		form: 'DDDmilled16'
 	},
 	{
 		name: 'Софи',
-		place: 'apartment',
-		price: 2200
+		form: 'DDDmilled16'
 	},
 	{
 		name: 'Цветок',
-		place: 'apartment',
-		price: 2200
-	}
+		form: 'DDDmilled16'
+	},
+	{
+		name: 'Стиль 1 венге',
+		form: 'build20First'
+	},
+	{
+		name: 'Стиль 1 дуб шале серебро',
+		form: 'build20First'
+	},
+	{
+		name: 'Стиль 1 клен айс',
+		form: 'build20First'
+	},
+	{
+		name: 'Стиль 1 лист бежевый',
+		form: 'build20First'
+	},
+	{
+		name: 'Неаполь белый',
+		form: 'build20First'
+	},
+	{
+		name: 'Неаполь серебро',
+		form: 'build20First'
+	},
+	{
+		name: 'Ника светлая',
+		form: 'build20Second'
+	},
+	{
+		name: 'Ника темная',
+		form: 'build20Second'
+	},
+	{
+		name: 'ку12',
+		form: 'build20Second'
+	},
+	{
+		name: 'ку22',
+		form: 'build20Second'
+	},
+	{
+		name: 'Турин',
+		form: 'build20Third'
+	},
+	{
+		name: '633 снежное дерево',
+		form: 'build20Third'
+	},
+
 ];
+
 
 const knobList = [
 	{
 		name: 'FUARO Top XL (сатинированный хром)',
-		price: 2500
+		price: 1900
 	},
 	{
 		name: 'FUARO Top XL (хром)',
-		price: 2100
+		price: 1900
 	},
 	{
 		name: 'FUARO Top XL (черный)',
-		price: 2200
+		price: 1900
 	},
 	{
 		name: 'Palidore 75',
-		price: 2200
+		price: 1
 	}
 ];
 
@@ -319,6 +405,48 @@ const inPanelWrapper = document.querySelector('.inPanel-wrapper'),
 		outPanelWrapper = document.querySelector('.outPanel-wrapper'),
 		outPanelTopBut = document.querySelector('.outPanel-topBut'),
 		outPanelBotBut = document.querySelector('.outPanel-botBut');
+
+const intModalBut = document.querySelector('.func__interior'),
+		intModal = document.querySelector('.int-modal'),
+		intModalBox = document.querySelector('.int-modal__box'),
+		intModalUnder = document.querySelector('.int-modal__underlay'),
+		intModalClose = document.querySelector('.int-modal__close-box');
+
+const descModalBut = document.querySelector('.func__about'),
+		descModal = document.querySelector('.desc-modal'),
+		descModalBox = document.querySelector('.desc-modal__box'),
+		descModalUnder = document.querySelector('.desc-modal__underlay'),
+		descModalText = document.querySelector('.desc-modal__text'),
+		descModalClose = document.querySelector('.desc-modal__close');
+
+
+descModalBut.addEventListener('click', e => {
+	descModal.style.display = 'block';
+});
+
+descModalClose.addEventListener('click', e => {
+	descModal.style.display = 'none';
+});
+
+
+intModalBut.addEventListener('click', e => {
+	intModal.style.display = 'block';
+
+	intModalBox.appendChild(resultIn.cloneNode(true));
+
+			const intModalResult = intModalBox.querySelectorAll('.resultIn');
+			intModalResult.forEach(function (item, i, arr) {
+				item.classList.remove('resultIn');
+				item.classList.add('int-modal-result');
+			});
+});
+
+intModalClose.addEventListener('click', e => {
+	intModal.style.display = 'none';
+	intModalBox.innerHTML = '';
+});
+
+
 
 function apartButFunc(){
 	apartBut.classList.add('border');
@@ -426,79 +554,37 @@ function showCase() {
 	});
 }
 
-function createOutPanelBox1() {
-	if(outPanelList.length >= 10) {
+function createOutPanelBox(i) {
+	if(outPanelList.length > i * 8) {
 		const outPanelBox = document.querySelectorAll('.outPanel-box');
 		let div = document.createElement('div');
 		div.className = 'outPanel-box';
-		outPanelBox[0].after(div);
+		outPanelBox[i-1].after(div);
 
 		const outPanelDots = document.querySelectorAll('.outPanel-dots__item');
 		let div1 = document.createElement('div');
 		div1.className = 'outPanel-dots__item';
-		outPanelDots[0].after(div1);
+		outPanelDots[i-1].after(div1);
 	}
 }
-function createOutPanelBox2() {
-	if(outPanelList.length >= 19) {
-		const outPanelBox = document.querySelectorAll('.outPanel-box');
-		let div = document.createElement('div');
-		div.className = 'outPanel-box';
-		outPanelBox[1].after(div);
 
-		const outPanelDots = document.querySelectorAll('.outPanel-dots__item');
-		let div1 = document.createElement('div');
-		div1.className = 'outPanel-dots__item';
-		outPanelDots[1].after(div1);
-	}
+for (let i = 1; i < 15; i++) {
+	createOutPanelBox(i);
 }
-function createOutPanelBox3() {
-	if(outPanelList.length >= 28) {
-		const outPanelBox = document.querySelectorAll('.outPanel-box');
-		let div = document.createElement('div');
-		div.className = 'outPanel-box';
-		outPanelBox[2].after(div);
 
-		const outPanelDots = document.querySelectorAll('.outPanel-dots__item');
-		let div1 = document.createElement('div');
-		div1.className = 'outPanel-dots__item';
-		outPanelDots[2].after(div1);
-	}
-}
 
 function showOutPanel() {
 	const outPanelBox = document.querySelectorAll('.outPanel-box');
 	outPanelList.forEach((item, i) => {
-		if(i < 8) {
-			let div = document.createElement('div');
-			div.className = 'outPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
-			outPanelBox[0].append(div);
-		}
+		for (let a = 0; a < 14; a++) {
+			if(i+1 > a * 8 && i+1 <= a * 8 + 8) {
+				let div = document.createElement('div');
+				div.className = 'outPanel__item';
+				div.setAttribute('data-src', i);
+				div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
+				outPanelBox[a].append(div);
 
-		if(i > 7 && i < 16) {
-			let div = document.createElement('div');
-			div.className = 'outPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
-			outPanelBox[1].append(div);
-		}
-
-		if(i > 15 && i < 24) {
-			let div = document.createElement('div');
-			div.className = 'outPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
-			outPanelBox[2].append(div);
-		}
-
-		if(i > 23 && i < 32) {
-			let div = document.createElement('div');
-			div.className = 'outPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внешние панели/${item.name}.png" class="outPanel__item-img">`;
-			outPanelBox[3].append(div);
+			}
 		}
 	});
 }
@@ -534,58 +620,25 @@ outPanelBotBut.addEventListener('click', e => {
 	}
 });
 
-// function showInPanel() {
-// 	inPanelList.forEach((item, i) => {
-// 			let div = document.createElement('div');
-// 			div.className = 'inPanel__item';
-// 			div.setAttribute('data-src', i);
-// 			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
-// 			inPanel.append(div);
-// 	});
-// }
 
-
-
-
-function createInPanelBox1() {
-	if(inPanelList.length >= 10) {
+function createInPanelBox(i) {
+	if(inPanelList.length > i * 8) {
 		const inPanelBox = document.querySelectorAll('.inPanel-box');
 		let div = document.createElement('div');
 		div.className = 'inPanel-box';
-		inPanelBox[0].after(div);
+		inPanelBox[i-1].after(div);
 
 		const inPanelDots = document.querySelectorAll('.inPanel-dots__item');
 		let div1 = document.createElement('div');
 		div1.className = 'inPanel-dots__item';
-		inPanelDots[0].after(div1);
+		inPanelDots[i-1].after(div1);
 	}
 }
-function createInPanelBox2() {
-	if(inPanelList.length >= 19) {
-		const inPanelBox = document.querySelectorAll('.inPanel-box');
-		let div = document.createElement('div');
-		div.className = 'inPanel-box';
-		inPanelBox[1].after(div);
 
-		const inPanelDots = document.querySelectorAll('.inPanel-dots__item');
-		let div1 = document.createElement('div');
-		div1.className = 'inPanel-dots__item';
-		inPanelDots[1].after(div1);
-	}
+for (let i = 1; i < 15; i++) {
+	createInPanelBox(i);
 }
-function createInPanelBox3() {
-	if(inPanelList.length >= 28) {
-		const inPanelBox = document.querySelectorAll('.inPanel-box');
-		let div = document.createElement('div');
-		div.className = 'inPanel-box';
-		inPanelBox[2].after(div);
 
-		const inPanelDots = document.querySelectorAll('.inPanel-dots__item');
-		let div1 = document.createElement('div');
-		div1.className = 'inPanel-dots__item';
-		inPanelDots[2].after(div1);
-	}
-}
 
 let inPanelBoxNum = 0;
 
@@ -622,38 +675,19 @@ inPanelBotBut.addEventListener('click', e => {
 function showInPanel() {
 	const inPanelBox = document.querySelectorAll('.inPanel-box');
 	inPanelList.forEach((item, i) => {
-		if(i < 8) {
-			let div = document.createElement('div');
-			div.className = 'inPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
-			inPanelBox[0].append(div);
-		}
 
-		if(i > 7 && i < 16) {
-			let div = document.createElement('div');
-			div.className = 'inPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
-			inPanelBox[1].append(div);
-		}
+		for (let a = 0; a < 14; a++) {
+			if(i+1 > a * 8 && i+1 <= a * 8 + 8) {
+				let div = document.createElement('div');
+				div.className = 'inPanel__item';
+				div.setAttribute('data-src', i);
+				div.innerHTML = ` <img src="./img/mini/Внутренние панели/${item.name}.png" class="inPanel__item-img">`;
 
-		if(i > 15 && i < 24) {
-			let div = document.createElement('div');
-			div.className = 'inPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
-			inPanelBox[2].append(div);
-		}
-
-		if(i > 23 && i < 32) {
-			let div = document.createElement('div');
-			div.className = 'inPanel__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = ` <img src="./img/mini/Внутренние панели/3Д фрезерованные 16мм/${item.name}.png" class="inPanel__item-img">`;
-			inPanelBox[3].append(div);
+				inPanelBox[a].append(div);
+			}
 		}
 	});
+
 }
 
 function showKnob() {
@@ -704,6 +738,7 @@ function caseApartResult(a) {
 
 	panelMenu.style.display = 'block';
 	buttonBox.style.display = 'flex';
+
 	// inPanelText.style.display = 'flex';
 
 	let b = '';
@@ -716,8 +751,13 @@ function caseApartResult(a) {
 			linkToSite.case = caseApartList[a][key];
 		}
 
+		// if (key == 'price') {
+		// 	price.case = caseApartList[a][key];
+		// 	considerPrice();
+		// }
+
 		if (key == 'price') {
-			price.case = caseApartList[a][key];
+			price.caseForm = caseApartList[a][key];
 			considerPrice();
 		}
 
@@ -734,6 +774,9 @@ function caseApartResult(a) {
 			linkToSite.casePanelType = false;
 			price.casePanelType = false;
 		}
+		descModalText.innerHTML = `Информация о модели: <span style = "font-weight: 600;";>${b}</span>
+		<br>
+		${caseApartList[a].about}`;
 	}
 
 	// console.log(b);
@@ -753,6 +796,7 @@ function caseHouseResult(a) {
 
 	panelMenu.style.display = 'block';
 	buttonBox.style.display = 'flex';
+
 	// inPanelText.style.display = 'flex';
 
 	let b = '';
@@ -765,7 +809,7 @@ function caseHouseResult(a) {
 		}
 
 		if (key == 'price') {
-			price.case = caseHouseList[a][key];
+			price.caseForm = caseHouseList[a][key];
 			considerPrice();
 		}
 
@@ -783,6 +827,10 @@ function caseHouseResult(a) {
 			price.casePanelType = false;
 		}
 	}
+
+	descModalText.innerHTML = `Информация о модели: <span style = "font-weight: 600;";>${b}</span>
+	<br>
+	${caseHouseList[a].about}`;
 	// console.log(b);
 
 	document.querySelector('.case-result').remove();
@@ -831,17 +879,20 @@ function inPanelResult(a) {
 			b = inPanelList[a][key];
 		}
 
-		if (key == 'price') {
-			price.inPanel = inPanelList[a][key];
+		if (key == 'form') {
+			price.inPanelForm = inPanelList[a][key];
+			// console.log(price.inPanelForm);
 			considerPrice();
 		}
+
+
 	}
 	// console.log(b);
 
 	document.querySelector('.facingIn-result').remove();
 	let img = document.createElement('img');
 	img.className = 'resultIn__item facingIn-result';
-	img.setAttribute('src', `./img/result/Внутренние панели/3Д фрезерованные 16мм/${b}.png`);
+	img.setAttribute('src', `./img/result/Внутренние панели/${b}.png`);
 	// img.innerHTML = ` <img src="${src}" class="outPanel__item-img">`;
 	resultIn.append(img);
 
@@ -949,7 +1000,7 @@ caseHouse.addEventListener('click', e => {
 });
 
 
-inPanelWrapper.addEventListener('click', e => {
+inPanel.addEventListener('click', e => {
 	let a = '';
 
 	if (e.target && e.target.className == 'inPanel__item-img')
@@ -1010,28 +1061,38 @@ knob.addEventListener('click', e => {
 let price = {
 	case: 0,
 	outPanel: 0,
-	inPanel: 0,
 	knob: 0,
-	casePanelType: ''
+	casePanelType: '',
+	inPanelForm: '',
+	caseForm: ''
 };
 
 function considerPrice() {
 	document.querySelector('.func__price').innerText = `Цена:`;
 
+	for (let key in price.caseForm) {
+		if(key == price.inPanelForm) {
+			price.case = price.caseForm[key];
+		}
+	}
+
+	// price.case = price.caseForm
+
 	if (price.casePanelType == true) {
-		if (price.case != 0 && price.inPanel != 0 && price.knob != 0) {
-			const totalPrice = price.case + price.inPanel + price.knob;
+		if (price.case != 0  && price.knob != 0) {
+			const totalPrice = price.case + price.knob;
 			document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
 		}
 	} else {
-		if (price.case != 0 && price.outPanel != 0 && price.inPanel != 0 && price.knob != 0) {
-		const totalPrice = price.case + price.outPanel + price.inPanel + price.knob;
+		if (price.case != 0 && price.outPanel != 0 && price.knob != 0) {
+		const totalPrice = price.case + price.outPanel + price.knob;
 		document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
 		}
 	}
 
-}
+	// console.log(price);
 
+}
 
 randomBut.addEventListener('click', e => {
 	apartButFunc();
@@ -1109,11 +1170,11 @@ randomBut.addEventListener('click', e => {
 	randomKnob();
 });
 
+
 function minPrice() {
 	let caseApartArr = [];
 	let caseHouseArr = [];
 	let outPanelArr = [];
-	let inPanelArr = [];
 	let knobArr = [];
 
 	let ApartCaseNum = '';
@@ -1128,37 +1189,30 @@ function minPrice() {
 	apartButFunc();
 
 	caseApartList.forEach((item, a) => {
-		for (let key in caseApartList[a]) {
-			if (key == 'price') {
-				caseApartArr[a] = caseApartList[a][key];
-			}
-		}
-		let lowApartCase = Math.min.apply(null, caseApartArr);
-		lowApartCaseNum = lowApartCase;
-		for (let key in caseApartList[a]) {
+		caseApartArr[a] = item.price.milled6;
+	});
 
-			if (key == 'price' && lowApartCase == caseApartList[a][key]) {
-				ApartCaseNum = a;
-			}
+	lowApartCaseNum = Math.min.apply(null, caseApartArr);
 
+	caseApartList.forEach((item, a) => {
+		if (caseApartList[a].price.milled6 == lowApartCaseNum) {
+			ApartCaseNum = a;
 		}
 	});
 
 
 	caseHouseList.forEach((item, a) => {
-		for (let key in caseHouseList[a]) {
-			if (key == 'price') {
-				caseHouseArr[a] = caseHouseList[a][key];
-			}
-		}
-		let lowHouseCase = Math.min.apply(null, caseHouseArr);
-		lowHouseCaseNum = lowHouseCase;
-		for (let key in caseHouseList[a]) {
-			if (key == 'price' && lowHouseCase == caseHouseList[a][key]) {
-				HouseCaseNum = a;
-			}
+		caseHouseArr[a] = item.price.milled6;
+	});
+
+	lowHouseCaseNum = Math.min.apply(null, caseHouseArr);
+
+	caseHouseList.forEach((item, a) => {
+		if (caseHouseList[a].price.milled6 == lowHouseCaseNum) {
+			HouseCaseNum = a;
 		}
 	});
+
 
 	outPanelList.forEach((item, a) => {
 		for (let key in outPanelList[a]) {
@@ -1170,20 +1224,6 @@ function minPrice() {
 		for (let key in outPanelList[a]) {
 			if (key == 'price' && lowOutPanel == outPanelList[a][key]) {
 				outPanelNum = a;
-			}
-		}
-	});
-
-	inPanelList.forEach((item, a) => {
-		for (let key in inPanelList[a]) {
-			if (key == 'price') {
-				inPanelArr[a] = inPanelList[a][key];
-			}
-		}
-		let lowInPanel = Math.min.apply(null, inPanelArr);
-		for (let key in inPanelList[a]) {
-			if (key == 'price' && lowInPanel == inPanelList[a][key]) {
-				inPanelNum = a;
 			}
 		}
 	});
@@ -1203,16 +1243,10 @@ function minPrice() {
 	});
 
 
-	// console.log(ApartCaseNum);
-	// console.log(HouseCaseNum);
-	// console.log(outPanelNum);
-	// console.log(inPanelNum);
-	// console.log(knobNum);
-
 	if (lowApartCaseNum <= lowHouseCaseNum) {
 		caseApartResult(ApartCaseNum);
 		const itemParentApart = document.querySelector('.case-apartment'),
-		itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
+				itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
 		itemApartCaseNum.forEach( e => {
 			e.classList.remove('border');
 		});
@@ -1222,10 +1256,16 @@ function minPrice() {
 			e.classList.remove('border');
 		});
 		itemApartCaseNum[ApartCaseNum].classList.add('border');
+
+		inPanelList.forEach((item, a) => {
+			if (inPanelList[a].form == 'milled6') {
+				inPanelNum = a;
+			}
+		});
 	} else {
 		caseHouseResult(HouseCaseNum);
 		const itemParentApart = document.querySelector('.case-apartment'),
-		itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
+				itemApartCaseNum = itemParentApart.querySelectorAll('.case__item');
 		itemApartCaseNum.forEach( e => {
 			e.classList.remove('border');
 		});
@@ -1235,6 +1275,12 @@ function minPrice() {
 			e.classList.remove('border');
 		});
 		itemHouseCaseNum[HouseCaseNum].classList.add('border');
+
+		inPanelList.forEach((item, a) => {
+			if (inPanelList[a].form == 'milled6') {
+				inPanelNum = a;
+			}
+		});
 	}
 
 
@@ -1280,37 +1326,30 @@ function maxPrice() {
 	apartButFunc();
 
 	caseApartList.forEach((item, a) => {
-		for (let key in caseApartList[a]) {
-			if (key == 'price') {
-				caseApartArr[a] = caseApartList[a][key];
-			}
-		}
-		let lowApartCase = Math.max.apply(null, caseApartArr);
-		lowApartCaseNum = lowApartCase;
-		for (let key in caseApartList[a]) {
+		caseApartArr[a] = item.price.DDDmilled16;
+	});
 
-			if (key == 'price' && lowApartCase == caseApartList[a][key]) {
-				ApartCaseNum = a;
-			}
+	lowApartCaseNum = Math.max.apply(null, caseApartArr);
 
+	caseApartList.forEach((item, a) => {
+		if (caseApartList[a].price.DDDmilled16 == lowApartCaseNum) {
+			ApartCaseNum = a;
 		}
 	});
 
 
 	caseHouseList.forEach((item, a) => {
-		for (let key in caseHouseList[a]) {
-			if (key == 'price') {
-				caseHouseArr[a] = caseHouseList[a][key];
-			}
-		}
-		let lowHouseCase = Math.max.apply(null, caseHouseArr);
-		lowHouseCaseNum = lowHouseCase;
-		for (let key in caseHouseList[a]) {
-			if (key == 'price' && lowHouseCase == caseHouseList[a][key]) {
-				HouseCaseNum = a;
-			}
+		caseHouseArr[a] = item.price.DDDmilled16;
+	});
+
+	lowHouseCaseNum = Math.max.apply(null, caseHouseArr);
+
+	caseHouseList.forEach((item, a) => {
+		if (caseHouseList[a].price.DDDmilled16 == lowHouseCaseNum) {
+			HouseCaseNum = a;
 		}
 	});
+
 
 	outPanelList.forEach((item, a) => {
 		for (let key in outPanelList[a]) {
@@ -1322,20 +1361,6 @@ function maxPrice() {
 		for (let key in outPanelList[a]) {
 			if (key == 'price' && lowOutPanel == outPanelList[a][key]) {
 				outPanelNum = a;
-			}
-		}
-	});
-
-	inPanelList.forEach((item, a) => {
-		for (let key in inPanelList[a]) {
-			if (key == 'price') {
-				inPanelArr[a] = inPanelList[a][key];
-			}
-		}
-		let lowInPanel = Math.max.apply(null, inPanelArr);
-		for (let key in inPanelList[a]) {
-			if (key == 'price' && lowInPanel == inPanelList[a][key]) {
-				inPanelNum = a;
 			}
 		}
 	});
@@ -1354,13 +1379,6 @@ function maxPrice() {
 		}
 	});
 
-
-	// console.log(ApartCaseNum);
-	// console.log(HouseCaseNum);
-	// console.log(outPanelNum);
-	// console.log(inPanelNum);
-	// console.log(knobNum);
-
 	if (lowApartCaseNum >= lowHouseCaseNum) {
 		caseApartResult(ApartCaseNum);
 		const itemParentApart = document.querySelector('.case-apartment'),
@@ -1374,6 +1392,12 @@ function maxPrice() {
 			e.classList.remove('border');
 		});
 		itemApartCaseNum[ApartCaseNum].classList.add('border');
+
+		inPanelList.forEach((item, a) => {
+			if (inPanelList[a].form == 'DDDmilled16') {
+				inPanelNum = a;
+			}
+		});
 	} else {
 		caseHouseResult(HouseCaseNum);
 		const itemParentApart = document.querySelector('.case-apartment'),
@@ -1387,6 +1411,12 @@ function maxPrice() {
 			e.classList.remove('border');
 		});
 		itemHouseCaseNum[HouseCaseNum].classList.add('border');
+
+		inPanelList.forEach((item, a) => {
+			if (inPanelList[a].form == 'DDDmilled16') {
+				inPanelNum = a;
+			}
+		});
 	}
 
 
@@ -1449,14 +1479,6 @@ function addLinkToSite() {
 document.querySelector('.link-to-siteBtn').addEventListener('click', e => {
 	addLinkToSite();
 });
-
-createInPanelBox1();
-createInPanelBox2();
-createInPanelBox3();
-
-createOutPanelBox1();
-createOutPanelBox2();
-createOutPanelBox3();
 
 showCase();
 showOutPanel();
