@@ -92,12 +92,12 @@ a:hover {
 	}
 
 	.inPanel {
-		min-height: 100px;
+		min-height: 200px;
 		height: auto;
 	}
 
 	.inPanel-box {
-		min-height: 100px;
+		min-height: 200px;
 		height: auto;
 	}
 
@@ -279,9 +279,24 @@ a:hover {
 		height: 250px;
 	}
 
-	.inPanel-box {
-		height: 200px;
+	.inPanel {
+		height: 210px;
 	}
+
+	.inPanel-wrapper {
+		width: 20px;
+		height: 100%;
+	}
+
+
+	.inPanel-dots__item {
+		width: 8px;
+		height: 8px;
+	}
+
+	/* .inPanel-dots__item:first-child {
+		margin-top: 10px;
+	} */
 
 	.knob-box {
 		height: 250px;
