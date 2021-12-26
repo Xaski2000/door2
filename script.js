@@ -1,8 +1,9 @@
 const caseApartList = [{
 		name: 'М1 3к',
-		desc: 'Одна панель',
+		panel: 'Одна панель',
 		place: 'apartment',
-		overPanel: false,
+		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
+		overPanel: true,
 		about: 'Петли осевые, 3 контура уплотнения, МЕТАЛЛ 1,4 мм, коробка 135 мм, полотно 105-115мм, утеплитель мин.вата и пенополистирол, 2 замка Гардиан 3 серии d ригелей 16 мм, ночная задвижка, цилиндр перфо ключ -верт. Эксцентрик, покрытие: черный муар с блесткой.',
 		price: {
 			milled6: 25805,
@@ -16,8 +17,9 @@ const caseApartList = [{
 	},
 	{
 		name: 'М2',
-		desc: 'Две панели',
+		panel: 'Две панели',
 		place: 'apartment',
+		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: false,
 		about: 'Петли осевые, 3 контура уплотнения, МЕТАЛЛ 1,4 мм, коробка 135 мм, полотно 105-115мм, утеплитель мин.вата и пенополистирол, 2 замка Гардиан 3 серии d ригелей 16 мм, покрытие: черный муар с блесткой, с внеш.стороны панель МДФ , эксцентрик',
 		price: {
@@ -32,8 +34,9 @@ const caseApartList = [{
 	},
 	{
 		name: 'М7',
-		desc: 'Одна панель',
+		panel: 'Одна панель',
 		place: 'apartment',
+		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: true,
 		about: 'Петли Барк, 3 контура уплотнения, МЕТАЛЛ 1,5 мм, закрытая утепленная коробка 115 мм, полотно 95-105 мм, утеплитель базальтовая плита, 2 замка: Бордер 5 ригелей d 18 мм, Фуаро 3 ригеля d 16 мм, цилиндр перфо, покрытие: муар мокко, эксцентрик',
 		price: {
@@ -48,8 +51,9 @@ const caseApartList = [{
 	},
 	{
 		name: 'Мерседес 2',
-		desc: 'Две панели',
+		panel: 'Две панели',
 		place: 'apartment',
+		desc: 'металл 2 мм <br> 3-и контура уплотнителя',
 		overPanel: false,
 		about: '3 осевые петли, 3 контура уплотнения,МЕТАЛЛ 2 мм, коробка 135 мм, полотно 105-115 мм, утеплитель мин.вата, пенополистирол, замок сувальд. и цил.: Бордер professional, d 18 мм, броненакладка. порог матовая нерж. покрытие: черный муар с блесткой. эксцентрик* ',
 		price: {
@@ -66,8 +70,9 @@ const caseApartList = [{
 
 const caseHouseList = [{
 		name: 'М5',
-		desc: 'Одна панель',
+		panel: 'Одна панель',
 		place: 'house',
+		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: true,
 		about: 'Петли осевые, 3 контура уплотнения (1 магнитный), МЕТАЛЛ 1,5 мм, Пластиковый двухкамерный Терморазрыв на коробе и полотне, коробка 165 мм, полотно 100-110 мм, 2 сувальд. замка d ригелей 18 и 16 мм, авто накладки, порог матовая нержавейка, покрытие: цинкогрунт + черный муар с блесткой',
 		price: {
@@ -82,8 +87,9 @@ const caseHouseList = [{
 	},
 	{
 		name: 'М10',
-		desc: 'Две панели',
+		panel: 'Две панели',
 		place: 'house',
+		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: false,
 		about: 'петли осевые, 3 контура уплотнения (1 магнитный), МЕТАЛЛ 1,5 мм, Пластиковый двухкамерный Терморазрыв на коробе и полотне, коробка 165 мм, полотно 115-125 мм, 2 сувальд. замка d ригелей 18 и 16 мм, авто накладки, порог матовая нержавейка, покрытие: цинкогрунт + черный муар с блесткой',
 		price: {
@@ -487,38 +493,38 @@ function hideAll() {
 
 function inButEvent() {
 	hideAll();
-	outBut.parentNode.style.justifyContent = 'end';
+	// outBut.parentNode.style.justifyContent = 'end';
 
 	inPanel.style.display = 'flex';
 	inPanelText.style.display = 'flex';
 
-	knobBut.style.display = 'none';
-	outBut.style.display = 'block';
-	inBut.style.display = 'none';
+	// knobBut.style.display = 'none';
+	// outBut.style.display = 'block';
+	// inBut.style.display = 'none';
 }
 
 function outButEvent() {
 	hideAll();
-	inBut.parentNode.style.justifyContent = 'space-between';
+	// inBut.parentNode.style.justifyContent = 'space-between';
 
 	outPanel.style.display = 'flex';
 	outPanelText.style.display = 'flex';
 
-	inBut.style.display = 'block';
-	outBut.style.display = 'none';
-	knobBut.style.display = 'block';
+	// inBut.style.display = 'block';
+	// outBut.style.display = 'none';
+	// knobBut.style.display = 'block';
 }
 
 function knobButEvent() {
 	hideAll();
-	knobBut.parentNode.style.justifyContent = 'start';
+	// knobBut.parentNode.style.justifyContent = 'start';
 
 	knob.style.display = 'flex';
 	knobText.style.display = 'flex';
 
-	inBut.style.display = 'none';
-	outBut.style.display = 'block';
-	knobBut.style.display = 'none';
+	// inBut.style.display = 'none';
+	// outBut.style.display = 'block';
+	// knobBut.style.display = 'none';
 }
 
 outBut.addEventListener('click', e => {
@@ -540,6 +546,7 @@ function showCase() {
 			div.className = 'case__item';
 			div.setAttribute('data-src', i);
 			div.innerHTML = `	<p class="case__item-name">${item.name}</p>
+									<p class="case__item-panel">${item.panel}</p>
 									<p class="case__item-desc">${item.desc}</p>`;
 			caseApart.append(div);
 	});
@@ -549,6 +556,7 @@ function showCase() {
 			div.className = 'case__item';
 			div.setAttribute('data-src', i);
 			div.innerHTML = ` <p class="case__item-name">${item.name}</p>
+									<p class="case__item-panel">${item.panel}</p>
 									<p class="case__item-desc">${item.desc}</p>`;
 			caseHouse.append(div);
 	});
@@ -950,6 +958,13 @@ caseApart.addEventListener('click', e => {
 		e.target.parentNode.classList.add('border');
 	}
 
+	if (e.target && e.target.className == 'case__item-panel')
+	{
+		a = e.target.parentNode.getAttribute('data-src');
+		caseBorder();
+		e.target.parentNode.classList.add('border');
+	}
+
 	if (e.target && e.target.className == 'case__item-desc')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
@@ -977,6 +992,14 @@ caseHouse.addEventListener('click', e => {
 	}
 
 	if (e.target && e.target.className == 'case__item-name')
+	{
+		a = e.target.parentNode.getAttribute('data-src');
+
+		caseBorder();
+		e.target.parentNode.classList.add('border');
+	}
+
+	if (e.target && e.target.className == 'case__item-panel')
 	{
 		a = e.target.parentNode.getAttribute('data-src');
 
@@ -1068,7 +1091,7 @@ let price = {
 };
 
 function considerPrice() {
-	document.querySelector('.func__price').innerText = `Цена:`;
+	document.querySelector('.func__price').innerHTML = '<span>Цена:</span>';
 
 	for (let key in price.caseForm) {
 		if(key == price.inPanelForm) {
@@ -1081,12 +1104,12 @@ function considerPrice() {
 	if (price.casePanelType == true) {
 		if (price.case != 0  && price.knob != 0) {
 			const totalPrice = price.case + price.knob;
-			document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+			document.querySelector('.func__price').innerHTML = `<span>Цена:</span>  ${totalPrice}`;
 		}
 	} else {
 		if (price.case != 0 && price.outPanel != 0 && price.knob != 0) {
 		const totalPrice = price.case + price.outPanel + price.knob;
-		document.querySelector('.func__price').innerText = `Цена: ${totalPrice}`;
+		document.querySelector('.func__price').innerHTML = `<span>Цена:</span> ${totalPrice}`;
 		}
 	}
 

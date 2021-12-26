@@ -260,19 +260,28 @@ a:hover {
 	.case__item-name {
 		display: inline-block;
 		width: auto;
-		margin: 3px auto;
+		margin: 2px auto 0;
 		font-family: 'Jost', serif;
 		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.case__item-panel {
+		display: inline-block;
+		width: 100%;
+		margin: 0px auto;
+		font-family: 'Jost', serif;
+		font-size: 18px;
 		font-weight: bold;
 	}
 
 	.case__item-desc {
 		display: inline-block;
 		width: 100%;
-		margin: 3px auto;
+		margin: 0px auto;
 		font-family: 'Jost', serif;
-		font-size: 18px;
-		font-weight: bold;
+		font-size: 15px;
+		font-weight: normal;
 	}
 
 	.outPanel-box {
