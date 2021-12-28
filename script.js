@@ -410,7 +410,11 @@ const inPanelWrapper = document.querySelector('.inPanel-wrapper'),
 		inPanelBotBut = document.querySelector('.inPanel-botBut'),
 		outPanelWrapper = document.querySelector('.outPanel-wrapper'),
 		outPanelTopBut = document.querySelector('.outPanel-topBut'),
-		outPanelBotBut = document.querySelector('.outPanel-botBut');
+		outPanelBotBut = document.querySelector('.outPanel-botBut'),
+		caseApartmentBox = document.querySelector('.case-apartment-box'),
+		caseApartmentWrapper = document.querySelector('.case-apartment-wrapper'),
+		caseApartmentTopBut = document.querySelector('.case-apartment-topBut'),
+		caseApartmentBotBut = document.querySelector('.case-apartment-botBut');
 
 const intModalBut = document.querySelector('.func__interior'),
 		intModal = document.querySelector('.int-modal'),
@@ -460,7 +464,7 @@ function apartButFunc(){
 
 	caseText.style.display = 'flex';
 
-	caseApart.classList.add('flex');
+	caseApartmentBox.classList.add('flex');
 	caseHouse.classList.remove('flex');
 }
 
@@ -475,7 +479,7 @@ function houseButFunc(){
 	caseText.style.display = 'flex';
 
 	caseHouse.classList.add('flex');
-	caseApart.classList.remove('flex');
+	caseApartmentBox.classList.remove('flex');
 }
 
 houseBut.addEventListener('click', e => {
@@ -541,15 +545,15 @@ knobBut.addEventListener('click', e => {
 
 
 function showCase() {
-	caseApartList.forEach((item, i) => {
-			let div = document.createElement('div');
-			div.className = 'case__item';
-			div.setAttribute('data-src', i);
-			div.innerHTML = `	<p class="case__item-name">${item.name}</p>
-									<p class="case__item-panel">${item.panel}</p>
-									<p class="case__item-desc">${item.desc}</p>`;
-			caseApart.append(div);
-	});
+	// caseApartList.forEach((item, i) => {
+	// 		let div = document.createElement('div');
+	// 		div.className = 'case__item';
+	// 		div.setAttribute('data-src', i);
+	// 		div.innerHTML = `	<p class="case__item-name">${item.name}</p>
+	// 								<p class="case__item-panel">${item.panel}</p>
+	// 								<p class="case__item-desc">${item.desc}</p>`;
+	// 		caseApart.append(div);
+	// });
 
 	caseHouseList.forEach((item, i) => {
 			let div = document.createElement('div');
@@ -561,6 +565,77 @@ function showCase() {
 			caseHouse.append(div);
 	});
 }
+
+
+function createCaseApartmentBox(i) {
+	if(caseApartList.length > i * 2) {
+		const caseApartBox = document.querySelectorAll('.case-apartment');
+		let div = document.createElement('div');
+		div.className = 'case-box case-apartment';
+		caseApartBox[i-1].after(div);
+
+		const caseApartmentDots = document.querySelectorAll('.case-apartment-dots__item');
+		let div1 = document.createElement('div');
+		div1.className = 'case-apartment-dots__item';
+		caseApartmentDots[i-1].after(div1);
+	}
+}
+
+for (let i = 1; i < 4; i++) {
+	createCaseApartmentBox(i);
+}
+
+
+function showCaseApartment() {
+	const caseApartBox = document.querySelectorAll('.case-apartment');
+	caseApartList.forEach((item, i) => {
+		for (let a = 0; a < 4; a++) {
+			if(i+1 > a * 2 && i+1 <= a * 2 + 2) {
+				let div = document.createElement('div');
+				div.className = 'case__item';
+				div.setAttribute('data-src', i);
+				div.innerHTML = `	<p class="case__item-name">${item.name}</p>
+										<p class="case__item-panel">${item.panel}</p>
+										<p class="case__item-desc">${item.desc}</p>`;
+				caseApartBox[a].append(div);
+
+			}
+		}
+	});
+}
+
+let caseApartmentBoxNum = 0;
+
+function hideAllCaseApartmentBox() {
+	document.querySelectorAll('.case-apartment').forEach((item, i) => {
+		item.style.display = 'none';
+	});
+	document.querySelectorAll('.case-apartment-dots__item').forEach((item, i) => {
+		item.classList.remove('case-apartment-dots__itemActive');
+	});
+}
+
+caseApartmentTopBut.addEventListener('click', e => {
+	if(caseApartmentBoxNum > 0) {
+		caseApartmentBoxNum = caseApartmentBoxNum - 1;
+		hideAllCaseApartmentBox();
+
+		document.querySelectorAll('.case-apartment')[caseApartmentBoxNum].style.display = 'flex';
+		document.querySelectorAll('.case-apartment-dots__item')[caseApartmentBoxNum].classList.add('case-apartment-dots__itemActive');
+	}
+});
+
+caseApartmentBotBut.addEventListener('click', e => {
+	if(caseApartmentBoxNum < document.querySelectorAll('.case-apartment').length - 1) {
+		caseApartmentBoxNum = caseApartmentBoxNum + 1;
+		hideAllCaseApartmentBox();
+
+		document.querySelectorAll('.case-apartment')[caseApartmentBoxNum].style.display = 'flex';
+		document.querySelectorAll('.case-apartment-dots__item')[caseApartmentBoxNum].classList.add('case-apartment-dots__itemActive');
+	}
+});
+
+
 
 function createOutPanelBox(i) {
 	if(outPanelList.length > i * 8) {
@@ -782,10 +857,17 @@ function caseApartResult(a) {
 			linkToSite.casePanelType = false;
 			price.casePanelType = false;
 		}
-		descModalText.innerHTML = `Информация о модели: <span style = "font-weight: 600;";>${b}</span>
+		descModalText.innerHTML = `
+		Информация о модели: <span style = "font-weight: 600;";>${b}</span>
 		<br>
 		${caseApartList[a].about}`;
+
 	}
+
+	document.querySelector('.func__info').innerHTML = `
+		<p class="func__info-name">${caseApartList[a].name}</p>
+		<p class="func__info-desc">${caseApartList[a].desc}</p>
+	`;
 
 	// console.log(b);
 
@@ -835,6 +917,11 @@ function caseHouseResult(a) {
 			price.casePanelType = false;
 		}
 	}
+
+	document.querySelector('.func__info').innerHTML = `
+		<p class="func__info-name">${caseHouseList[a].name}</p>
+		<p class="func__info-desc">${caseHouseList[a].desc}</p>
+	`;
 
 	descModalText.innerHTML = `Информация о модели: <span style = "font-weight: 600;";>${b}</span>
 	<br>
@@ -941,7 +1028,44 @@ function knobResult(a) {
 
 
 
-caseApart.addEventListener('click', e => {
+document.querySelectorAll('.case-apartment')[0].addEventListener('click', e => {
+	let a = '';
+
+	if (e.target && e.target.className == 'case__item')
+	{
+		a = e.target.getAttribute('data-src');
+		caseBorder();
+		e.target.classList.add('border');
+	}
+
+	if (e.target && e.target.className == 'case__item-name')
+	{
+		a = e.target.parentNode.getAttribute('data-src');
+		caseBorder();
+		e.target.parentNode.classList.add('border');
+	}
+
+	if (e.target && e.target.className == 'case__item-panel')
+	{
+		a = e.target.parentNode.getAttribute('data-src');
+		caseBorder();
+		e.target.parentNode.classList.add('border');
+	}
+
+	if (e.target && e.target.className == 'case__item-desc')
+	{
+		a = e.target.parentNode.getAttribute('data-src');
+		caseBorder();
+		e.target.parentNode.classList.add('border');
+	}
+
+	if (a != '')
+	{
+		caseApartResult(a);
+	}
+
+});
+document.querySelectorAll('.case-apartment')[1].addEventListener('click', e => {
 	let a = '';
 
 	if (e.target && e.target.className == 'case__item')
@@ -1117,17 +1241,24 @@ function considerPrice() {
 
 }
 
+
 randomBut.addEventListener('click', e => {
-	apartButFunc();
+	// apartButFunc();
 	function randomCaseApart() {
-		const	itemParent = document.querySelector('.case-apartment'),
-				item = itemParent.querySelectorAll('.case__item'),
+		let b = Math.floor(Math.random() * 2);
+		const	itemParent = document.querySelectorAll('.case-apartment'),
+				item = itemParent[b].querySelectorAll('.case__item'),
 				a = Math.floor(Math.random() * item.length);
 
 		caseBorder();
 		item[a].classList.add('border');
 
-		caseApartResult(a);
+
+			 if (b == 0) {
+				caseApartResult(a);
+			 } else {
+				caseApartResult(a+2);
+			 }
 	}
 
 	function randomCaseHouse() {
@@ -1183,10 +1314,15 @@ randomBut.addEventListener('click', e => {
 
 	randomOutPanel();
 
-	if (apartBut.classList.contains('border')) {
+	if(apartBut.classList.contains('border') || houseBut.classList.contains('border')) {
+		if (apartBut.classList.contains('border')) {
+			randomCaseApart();
+		} else {
+			randomCaseHouse();
+		}
+	}else {
+		apartButFunc();
 		randomCaseApart();
-	} else {
-		randomCaseHouse();
 	}
 
 	randomInPanel();
@@ -1504,6 +1640,7 @@ document.querySelector('.link-to-siteBtn').addEventListener('click', e => {
 });
 
 showCase();
+showCaseApartment();
 showOutPanel();
 showInPanel();
 showKnob();

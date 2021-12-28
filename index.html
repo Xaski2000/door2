@@ -42,7 +42,22 @@
 
 			<p class="case-box__text box__text none"><span>2.</span>Выберите модель двери:</p>
 
-			<div class="case-box case-apartment">
+
+			<div class="case-apartment-box">
+				<div class="case-box case-apartment flex"></div>
+
+				<div class="case-apartment-wrapper">
+					<button class="case-apartment-but case-apartment-topBut">
+						<img style="transform: rotate(90deg);" src="./img/Стрелка.svg" alt="" class="case-apartment-but-img">
+					</button>
+					<div class="case-apartment-dots">
+						<div class="case-apartment-dots__item case-apartment-dots__itemActive"></div>
+					</div>
+					<button class="case-apartment-but case-apartment-botBut">
+						<img style="transform: rotate(270deg);" src="./img/Стрелка.svg" alt="" class="case-apartment-but-img">
+					</button>
+				</div>
+
 			</div>
 			<div class="case-box case-house">
 			</div>
@@ -68,18 +83,23 @@
 
 				<p class="outPanel-box__text box__text none"><span>4.</span>Внешняя панель:</p>
 
-				<div class="outPanel">
+				<div class="outPanel none">
 					<div class="underlay none">
 					</div>
 					<p class="underlay__text none">Выберите другую модель</p>
-					<div class="outPanel-dots">
-						<div class="outPanel-dots__item outPanel-dots__itemActive"></div>
-					</div>
-					<div class="outPanel-wrapper">
 
-						<button class="outPanel-but outPanel-topBut">Вверх</button>
-						<div class="outPanel-box flex"></div>
-						<button class="outPanel-but outPanel-botBut">Вниз</button>
+					<div class="outPanel-box flex"></div>
+
+					<div class="outPanel-wrapper">
+						<button class="outPanel-but outPanel-topBut">
+							<img style="transform: rotate(90deg);" src="./img/Стрелка.svg" alt="" class="outPanel-but-img">
+						</button>
+						<div class="outPanel-dots">
+							<div class="outPanel-dots__item outPanel-dots__itemActive"></div>
+						</div>
+						<button class="outPanel-but outPanel-botBut">
+							<img style="transform: rotate(270deg);" src="./img/Стрелка.svg" alt="" class="outPanel-but-img">
+						</button>
 					</div>
 				</div>
 
@@ -107,13 +127,13 @@
 		<div class="result">
 			<div class="bot__btn-box">
 				<button class="bot__btn random-btn">
-					<p class="bot__btn__text">Случайная дверь</p>
+					<p class="bot__btn__text">Случайная</p>
 				</button>
 				<button class="bot__btn low-price">
-					<p class="bot__btn__text">Самая дешевая дверь</p>
+					<p class="bot__btn__text">Самая дешевая</p>
 				</button>
 				<button class="bot__btn high-price">
-					<p class="bot__btn__text">Самая дорогая дверь</p>
+					<p class="bot__btn__text">Самая дорогая</p>
 				</button>
 			</div>
 			<div class="result-box">
@@ -137,14 +157,15 @@
 			</div>
 			<div class="func__btns">
 				<button class="func__about">
-					<p class="func__about-text">Подробнее о модели</p>
+					<p class="func__about-text">О модели</p>
 				</button>
 				<button class="func__interior">
-					<p class="func__interior-text">Вид в интерьере</p>
+					<p class="func__interior-text">В интерьере</p>
 				</button>
 				<a target="_blank" class="func__link link-to-siteBtn">
 					<p class="func__link__text link-to-site">Купить</p>
 				</a>
+				<div class="func__info"></div>
 				<p class="func__price"><span>Цена:</span></p>
 			</div>
 		</div>

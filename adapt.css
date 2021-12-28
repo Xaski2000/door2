@@ -101,9 +101,9 @@ a:hover {
 		height: auto;
 	}
 
-	.inPanel-but {
+	/* .inPanel-but {
 		height: 50px;
-	}
+	} */
 
 	.outPanel {
 		min-height: 100px;
@@ -115,9 +115,9 @@ a:hover {
 		height: auto;
 	}
 
-	.outPanel-but {
+	/* .outPanel-but {
 		height: 50px;
-	}
+	} */
 
 	.knob-box {
 		min-height: 100px;
@@ -176,12 +176,18 @@ a:hover {
 		position: absolute;
 		/* left: 0;
 		top: 0; */
-		height: 350px;
+		height: auto;
 		width: 100%;
 		opacity: 0.6;
 		z-index: 100;
 		margin: -5px -5px -5px -5px;
 		overflow: hidden;
+	}
+
+	.underlay::after {
+		content: '';
+		display: block;
+		padding-top: 45%;
 	}
 
 	.underlay__text {
@@ -260,10 +266,12 @@ a:hover {
 	.case__item-name {
 		display: inline-block;
 		width: auto;
-		margin: 2px auto 0;
+		margin: 4px auto 0;
 		font-family: 'Jost', serif;
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: bold;
+		line-height: 14px;
+
 	}
 
 	.case__item-panel {
@@ -271,8 +279,10 @@ a:hover {
 		width: 100%;
 		margin: 0px auto;
 		font-family: 'Jost', serif;
-		font-size: 18px;
+		font-size: 14px;
 		font-weight: bold;
+		line-height: 10px;
+
 	}
 
 	.case__item-desc {
@@ -280,32 +290,23 @@ a:hover {
 		width: 100%;
 		margin: 0px auto;
 		font-family: 'Jost', serif;
-		font-size: 15px;
+		line-height: 10px;
+		font-size: 12px;
 		font-weight: normal;
 	}
 
-	.outPanel-box {
+	/* .outPanel-box {
 		height: 250px;
-	}
+	} */
 
-	.inPanel {
-		height: 210px;
+
+	.outPanel-wrapper {
+		height: 30px;
 	}
 
 	.inPanel-wrapper {
-		width: 20px;
-		height: 100%;
+		height: 30px;
 	}
-
-
-	.inPanel-dots__item {
-		width: 8px;
-		height: 8px;
-	}
-
-	/* .inPanel-dots__item:first-child {
-		margin-top: 10px;
-	} */
 
 	.knob-box {
 		height: 250px;
@@ -320,21 +321,21 @@ a:hover {
 		background-color: #fff;
 		/* position: absolute; */
 		bottom: 0;
-		justify-content: end;
+		/* justify-content: end; */
 	}
 
 	.button__item {
 		display: inline-block;
 		background-color: #fff;
 		height: 65px;
-		width: 49%;
+		width: 32.5%;
 		/* align-self: flex-end; */
 		cursor: pointer;
 	}
 
-	.button-out {
+	/* .button-out {
 		width: 100%;
-	}
+	} */
 
 	.button__text {
 		font-size: 16px;
@@ -343,9 +344,8 @@ a:hover {
 
 
 
-	.func__about {
+	/* .func__about {
 		display: inline-block;
-		width: 45%;
 		height: 45%;
 		background-color: #fff;
 		margin: auto;
@@ -356,7 +356,6 @@ a:hover {
 
 	.func__interior {
 		display: inline-block;
-		width: 45%;
 		height: 45%;
 		background-color: #fff;
 		font-family: 'Jost', serif;
@@ -365,14 +364,12 @@ a:hover {
 		cursor: pointer;
 	}
 
-		.func__link {
-			width: 45%;
-			height: 45%;
-		}
+	.func__link {
+		height: 45%;
+	}
 
 	.func__price {
 		display: inline-flex;
-		width: 45%;
 		height: 45%;
 		background-color: #fff;
 		font-family: 'Jost', serif;
@@ -380,7 +377,7 @@ a:hover {
 		margin: auto;
 		align-items: center;
 		justify-content: center;
-	}
+	} */
 
 	.underlay {
 		/* display: none; */
@@ -388,12 +385,18 @@ a:hover {
 		position: absolute;
 		/* left: 0;
 		top: 0; */
-		height: 250px;
+		height: auto;
 		width: 100%;
 		opacity: 0.6;
 		z-index: 100;
 		margin: -5px -5px -5px -5px;
 		overflow: hidden;
+	}
+
+	.underlay::after {
+		content: '';
+		display: block;
+		padding-top: 45%;
 	}
 
 	.underlay__text {
@@ -405,8 +408,8 @@ a:hover {
 		width: 100%;
 		/* opacity: 0.4; */
 		opacity: 1;
-		margin: 80px -5px -5px;
-		font-size: 40px;
+		margin: 20% -5px -5px;
+		font-size: 30px;
 		text-align: center;
 		z-index: 100;
 		color: #fff;
