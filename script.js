@@ -466,6 +466,7 @@ function apartButFunc(){
 
 	caseApartmentBox.classList.add('flex');
 	caseHouse.classList.remove('flex');
+	inBut.style.backgroundColor = '#f8f5f0';
 	document.querySelector('.block-for-margin').style.display = 'block';
 }
 
@@ -481,6 +482,7 @@ function houseButFunc(){
 
 	caseHouse.classList.add('flex');
 	caseApartmentBox.classList.remove('flex');
+	inBut.style.backgroundColor = '#f8f5f0';
 	document.querySelector('.block-for-margin').style.display = 'block';
 }
 
