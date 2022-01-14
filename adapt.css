@@ -86,7 +86,7 @@ a:hover {
 		height: 100%;
 		/* max-width: 510px; */
 		width: 100%;
-		background-color: #fff;
+		background-color: #f8f5f0;
 		margin-left: 0;
 		position: relative;
 	}
@@ -226,13 +226,17 @@ a:hover {
 
 @media (max-width: 575px) {
 	.desc-modal__box {
-		width: 300px;
+		width: 340px;
 	}
 
 	.desc-modal__close {
-		margin: -75% auto auto auto;
+		margin: -50% auto auto auto;
 		width: 30px;
 		height: 30px;
+	}
+
+	.desc-modal__text {
+		font-size: 16px;
 	}
 
 	.int-modal__close {
@@ -314,10 +318,10 @@ a:hover {
 
 	.button-box {
 		display: flex;
-		margin: 10px auto 0px auto;
+		margin: 0px auto 0px auto;
 		height: 65px;
 		width: 100%;
-		padding: 0 5px;
+		padding: 10px 5px;
 		background-color: #fff;
 		/* position: absolute; */
 		bottom: 0;
@@ -327,7 +331,7 @@ a:hover {
 	.button__item {
 		display: inline-block;
 		background-color: #fff;
-		height: 65px;
+		height: 55px;
 		width: 32.5%;
 		/* align-self: flex-end; */
 		cursor: pointer;

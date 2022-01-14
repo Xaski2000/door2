@@ -58,7 +58,7 @@ a:hover {
 	height: 100%;
 	/* max-width: 510px; */
 	width: 510px;
-	background-color: #fff;
+	background-color: #f8f5f0;
 	margin-left: 0;
 	position: relative;
 }
@@ -86,17 +86,17 @@ a:hover {
 
 .desc-modal__box {
 	position: absolute;
-	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #eee;
-	width: 400px;
+	width: 600px;
 	z-index: 100000;
 	padding: 15px;
+	margin-top: 50vh;
 }
 
 .desc-modal__text {
-	text-align: center;
+	text-align: left;
 	font-size: 20px;
 	font-family: 'Jost', serif;
 
@@ -116,9 +116,7 @@ a:hover {
 
 .desc-modal__close {
 	position: absolute;
-	/* right: 32px;
-	top: 32px; */
-	margin: -48% auto auto auto;
+	margin: -36% auto auto auto;
 	top: 50%;
 	left: 100%;
 	width: 40px;
@@ -377,7 +375,7 @@ a:hover {
 
 .case-apartment-but-img {
 	color: #a76d50;
-	width: auto;
+	width: 22px;
 	height: 80%;
 	margin: auto;
 }
@@ -500,7 +498,7 @@ a:hover {
 
 .outPanel-but-img {
 	color: #a76d50;
-	width: auto;
+	width: 35px;
 	height: 80%;
 	margin: auto;
 }
@@ -551,7 +549,7 @@ a:hover {
 	width: 100%;
 	display: flex;
 	background-color: #f8f5f0;
-	margin-top: 5px;
+	/* margin-top: 5px; */
 	flex-wrap: wrap;
 }
 
@@ -698,10 +696,10 @@ a:hover {
 
 .button-box {
 	display: flex;
-	margin: 10px auto 0px auto;
+	margin: 0px auto 0px auto;
 	height: 90px;
 	width: 100%;
-	padding: 0 0px;
+	padding: 30px 0 0 0px;
 	background-color: #fff;
 	/* position: absolute; */
 	bottom: 0;
@@ -712,11 +710,12 @@ a:hover {
 .button__item {
 	display: inline-block;
 	background-color: #fff;
-	height: 90px;
+	height: 60px;
 	width: 32.5%;
 	/* margin: auto; */
 	/* align-self: flex-end; */
 	cursor: pointer;
+	/* border: 3px solid #a76d50; */
 }
 
 /* .button-out {
@@ -728,15 +727,28 @@ a:hover {
 	font-family: 'Jost', serif;
 }
 
+.block-for-margin {
+	height: 30px;
+	width: 100%;
+	background-color: #fff;
+	display: none;
+}
+
 .box__text {
 	height: 40px;
-	width: 100%;
+	width: 98%;
 	font-size: 20px;
 	font-family: 'Jost', serif;
+	margin: auto;
 	font-weight: 400;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: #fff;
+}
+
+.case-box__text {
+	margin-top: 5px;
 }
 
 

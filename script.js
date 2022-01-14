@@ -4,7 +4,7 @@ const caseApartList = [{
 		place: 'apartment',
 		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: true,
-		about: 'Петли осевые, 3 контура уплотнения, МЕТАЛЛ 1,4 мм, коробка 135 мм, полотно 105-115мм, утеплитель мин.вата и пенополистирол, 2 замка Гардиан 3 серии d ригелей 16 мм, ночная задвижка, цилиндр перфо ключ -верт. Эксцентрик, покрытие: черный муар с блесткой.',
+		about: 'Петли осевые,<br> 3 контура уплотнения,<br> МЕТАЛЛ 1,4 мм,<br> Коробка 135 мм,<br> Полотно 105-115мм,<br> Утеплитель мин.вата и пенополистирол,<br> 2 замка Гардиан 3 серии d ригелей 16 мм, <br>Ночная задвижка,<br> Цилиндр перфо ключ -верт. Эксцентрик,<br> Покрытие: черный муар с блесткой.',
 		price: {
 			milled6: 25805,
 			milled16: 26845,
@@ -21,7 +21,7 @@ const caseApartList = [{
 		place: 'apartment',
 		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: false,
-		about: 'Петли осевые, 3 контура уплотнения, МЕТАЛЛ 1,4 мм, коробка 135 мм, полотно 105-115мм, утеплитель мин.вата и пенополистирол, 2 замка Гардиан 3 серии d ригелей 16 мм, покрытие: черный муар с блесткой, с внеш.стороны панель МДФ , эксцентрик',
+		about: 'Петли осевые,<br> 3 контура уплотнения,<br> МЕТАЛЛ 1,4 мм,<br> Коробка 135 мм,<br> Полотно 105-115мм,<br> Утеплитель мин.вата и пенополистирол,<br> 2 замка Гардиан 3 серии d ригелей 16 мм,<br> Покрытие: черный муар с блесткой,<br> С внешней стороны панель МДФ ,<br> Эксцентрик',
 		price: {
 			milled6: 28028,
 			milled16: 29055,
@@ -38,7 +38,7 @@ const caseApartList = [{
 		place: 'apartment',
 		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: true,
-		about: 'Петли Барк, 3 контура уплотнения, МЕТАЛЛ 1,5 мм, закрытая утепленная коробка 115 мм, полотно 95-105 мм, утеплитель базальтовая плита, 2 замка: Бордер 5 ригелей d 18 мм, Фуаро 3 ригеля d 16 мм, цилиндр перфо, покрытие: муар мокко, эксцентрик',
+		about: 'Петли Барк,<br> 3 контура уплотнения, <br>МЕТАЛЛ 1,5 мм,<br> Закрытая утепленная коробка 115 мм,<br> Полотно 95-105 мм,<br> Утеплитель базальтовая плита, <br>2 замка: Бордер d 18 мм, Фуаро d 16 мм,<br> Цилиндр перфо,<br> Покрытие: муар мокко,<br> эксцентрик',
 		price: {
 			milled6: 27040,
 			milled16: 28210,
@@ -55,7 +55,7 @@ const caseApartList = [{
 		place: 'apartment',
 		desc: 'металл 2 мм <br> 3-и контура уплотнителя',
 		overPanel: false,
-		about: '3 осевые петли, 3 контура уплотнения,МЕТАЛЛ 2 мм, коробка 135 мм, полотно 105-115 мм, утеплитель мин.вата, пенополистирол, замок сувальд. и цил.: Бордер professional, d 18 мм, броненакладка. порог матовая нерж. покрытие: черный муар с блесткой. эксцентрик* ',
+		about: '3 осевые петли,<br> 3 контура уплотнения,<br>МЕТАЛЛ 2 мм,<br> Коробка 135 мм,<br> Полотно 105-115 мм,<br> Утеплитель мин.вата, Пенополистирол,<br> Замок сувальд. и цил.: Бордер professional, d 18 мм,<br> Броненакладка. порог матовая нерж.<br> Покрытие: черный муар с блесткой.<br> Эксцентрик* ',
 		price: {
 			milled6: 34970,
 			milled16: 36140,
@@ -74,7 +74,7 @@ const caseHouseList = [{
 		place: 'house',
 		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: true,
-		about: 'Петли осевые, 3 контура уплотнения (1 магнитный), МЕТАЛЛ 1,5 мм, Пластиковый двухкамерный Терморазрыв на коробе и полотне, коробка 165 мм, полотно 100-110 мм, 2 сувальд. замка d ригелей 18 и 16 мм, авто накладки, порог матовая нержавейка, покрытие: цинкогрунт + черный муар с блесткой',
+		about: 'Петли осевые,<br> 3 контура уплотнения (1 магнитный),<br> МЕТАЛЛ 1,5 мм,<br> Пластиковый двухкамерный Терморазрыв на коробе и полотне,<br> Коробка 165 мм,<br> Полотно 100-110 мм,<br> 2 сувальд. замка d ригелей 18 и 16 мм,<br> Авто накладки,<br> Порог матовая нержавейка,<br> Покрытие: цинкогрунт + черный муар с блесткой',
 		price: {
 			milled6: 34710,
 			milled16: 35880,
@@ -91,7 +91,7 @@ const caseHouseList = [{
 		place: 'house',
 		desc: 'металл 1,5 мм <br> 3-и контура уплотнителя',
 		overPanel: false,
-		about: 'петли осевые, 3 контура уплотнения (1 магнитный), МЕТАЛЛ 1,5 мм, Пластиковый двухкамерный Терморазрыв на коробе и полотне, коробка 165 мм, полотно 115-125 мм, 2 сувальд. замка d ригелей 18 и 16 мм, авто накладки, порог матовая нержавейка, покрытие: цинкогрунт + черный муар с блесткой',
+		about: 'петли осевые,<br> 3 контура уплотнения (1 магнитный),<br> МЕТАЛЛ 1,5 мм,<br> Пластиковый двухкамерный Терморазрыв на коробе и полотне, <br>Коробка 165 мм,<br> Полотно 115-125 мм, <br>2 сувальд. замка d ригелей 18 и 16 мм,<br> Авто накладки, <br>Порог матовая нержавейка,<br>Покрытие: цинкогрунт + черный муар с блесткой',
 		price: {
 			milled6: 39520,
 			milled16: 40820,
@@ -140,21 +140,21 @@ const outPanelList = [
 		place: 'apartment',
 		price: 3300
 	},
-	{
-		name: 'М1',
-		place: 'apartment',
-		price: 100
-	},
-	{
-		name: 'М5',
-		place: 'apartment',
-		price: 100
-	},
-	{
-		name: 'М7',
-		place: 'apartment',
-		price: 100
-	},
+	// {
+	// 	name: 'М1',
+	// 	place: 'apartment',
+	// 	price: 100
+	// },
+	// {
+	// 	name: 'М5',
+	// 	place: 'apartment',
+	// 	price: 100
+	// },
+	// {
+	// 	name: 'М7',
+	// 	place: 'apartment',
+	// 	price: 100
+	// },
 	{
 		name: 'Мадрид',
 		place: 'apartment',
@@ -185,18 +185,6 @@ const inPanelList = [
 		form: 'milled6'
 	},
 	{
-		name: 'Параллель светлая',
-		form: 'milled6'
-	},
-	{
-		name: 'Токио бетон',
-		form: 'milled6'
-	},
-	{
-		name: 'Фреш',
-		form: 'milled6'
-	},
-	{
 		name: 'Экопатина',
 		form: 'milled6'
 	},
@@ -221,6 +209,10 @@ const inPanelList = [
 		form: 'milled16'
 	},
 	{
+		name: 'Параллель светлая',
+		form: 'milled6'
+	},
+	{
 		name: 'Версаль темная',
 		form: 'milled16'
 	},
@@ -235,6 +227,10 @@ const inPanelList = [
 	{
 		name: 'Вертикаль кедр серый',
 		form: 'milled16Glass'
+	},
+	{
+		name: 'Токио бетон',
+		form: 'milled6'
 	},
 	{
 		name: 'Вертикаль светлая',
@@ -303,6 +299,10 @@ const inPanelList = [
 	{
 		name: 'Софи',
 		form: 'DDDmilled16'
+	},
+	{
+		name: 'Фреш',
+		form: 'milled6'
 	},
 	{
 		name: 'Цветок',
@@ -385,9 +385,9 @@ const caseApart = document.querySelector('.case-apartment'),
 		outPanel = document.querySelector('.outPanel'),
 		knob = document.querySelector('.knob-box'),
 		caseText = document.querySelector('.case-box__text'),
-		outPanelText = document.querySelector('.outPanel-box__text'),
-		inPanelText = document.querySelector('.inPanel-box__text'),
-		knobText = document.querySelector('.knob-box__text'),
+		// outPanelText = document.querySelector('.outPanel-box__text'),
+		// inPanelText = document.querySelector('.inPanel-box__text'),
+		// knobText = document.querySelector('.knob-box__text'),
 		resultOut = document.querySelector('.resultOut'),
 		resultIn = document.querySelector('.resultIn'),
 		panelMenu = document.querySelector('.panelMenu');
@@ -466,6 +466,7 @@ function apartButFunc(){
 
 	caseApartmentBox.classList.add('flex');
 	caseHouse.classList.remove('flex');
+	document.querySelector('.block-for-margin').style.display = 'block';
 }
 
 apartBut.addEventListener('click', e => {
@@ -480,6 +481,7 @@ function houseButFunc(){
 
 	caseHouse.classList.add('flex');
 	caseApartmentBox.classList.remove('flex');
+	document.querySelector('.block-for-margin').style.display = 'block';
 }
 
 houseBut.addEventListener('click', e => {
@@ -490,9 +492,16 @@ function hideAll() {
 	outPanel.style.display = 'none';
 	inPanel.style.display = 'none';
 	knob.style.display = 'none';
-	outPanelText.style.display = 'none';
-	inPanelText.style.display = 'none';
-	knobText.style.display = 'none';
+	knobBut.style.backgroundColor = '#fff';
+	inBut.style.backgroundColor = '#fff';
+	outBut.style.backgroundColor = '#fff';
+
+	// knobBut.style.borderBottom = '3px solid #a76d50';
+	// inBut.style.borderBottom = '3px solid #a76d50';
+	// outBut.style.borderBottom = '3px solid #a76d50';
+	// outPanelText.style.display = 'none';
+	// inPanelText.style.display = 'none';
+	// knobText.style.display = 'none';
 }
 
 function inButEvent() {
@@ -500,7 +509,9 @@ function inButEvent() {
 	// outBut.parentNode.style.justifyContent = 'end';
 
 	inPanel.style.display = 'flex';
-	inPanelText.style.display = 'flex';
+	inBut.style.backgroundColor = '#f8f5f0';
+	inBut.style.borderBottom = 'none';
+	// inPanelText.style.display = 'flex';
 
 	// knobBut.style.display = 'none';
 	// outBut.style.display = 'block';
@@ -512,7 +523,10 @@ function outButEvent() {
 	// inBut.parentNode.style.justifyContent = 'space-between';
 
 	outPanel.style.display = 'flex';
-	outPanelText.style.display = 'flex';
+	outBut.style.backgroundColor = '#f8f5f0';
+	outBut.style.borderBottom = 'none';
+
+	// outPanelText.style.display = 'flex';
 
 	// inBut.style.display = 'block';
 	// outBut.style.display = 'none';
@@ -524,7 +538,10 @@ function knobButEvent() {
 	// knobBut.parentNode.style.justifyContent = 'start';
 
 	knob.style.display = 'flex';
-	knobText.style.display = 'flex';
+	knobBut.style.backgroundColor = '#f8f5f0';
+	knobBut.style.borderBottom = 'none';
+
+	// knobText.style.display = 'flex';
 
 	// inBut.style.display = 'none';
 	// outBut.style.display = 'block';
@@ -1243,6 +1260,7 @@ function considerPrice() {
 
 
 randomBut.addEventListener('click', e => {
+	inButEvent();
 	// apartButFunc();
 	function randomCaseApart() {
 		let b = Math.floor(Math.random() * 2);
