@@ -1181,7 +1181,7 @@ inPanel.addEventListener('click', e => {
 	{
 		inPanelResult(a);
 
-		outButEvent();
+		// outButEvent();
 	}
 
 });
@@ -1200,7 +1200,7 @@ outPanel.addEventListener('click', e => {
 	if (a != '')
 	{
 		outPanelResult(a);
-		knobButEvent();
+		// knobButEvent();
 	}
 
 });
