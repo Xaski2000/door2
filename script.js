@@ -1638,21 +1638,21 @@ let linkToSite = {
 
 
 function addLinkToSite() {
-	let totalLink2 = '';
+	// let totalLink2 = '';
 
-	linkToSite.case = linkToSite.case.replace(' ', '-');
-	linkToSite.outPanel = linkToSite.outPanel.replace(' ', '-');
+	// linkToSite.case = linkToSite.case.replace(' ', '-');
+	// linkToSite.outPanel = linkToSite.outPanel.replace(' ', '-');
 
-	if (linkToSite.casePanelType == true) {
-		totalLink2 = linkToSite.case.toLowerCase();
-	} else {
-		const totalLink = linkToSite.case + linkToSite.outPanel;
-		totalLink2 = totalLink.toLowerCase();
-	}
+	// if (linkToSite.casePanelType == true) {
+	// 	totalLink2 = linkToSite.case.toLowerCase();
+	// } else {
+	// 	const totalLink = linkToSite.case + linkToSite.outPanel;
+	// 	totalLink2 = totalLink.toLowerCase();
+	// }
 
 
-	// console.log(totalLink2);
-	linkBtn.setAttribute('href', `https://liono.ru/product/${totalLink2}`);
+	// // console.log(totalLink2);
+	// linkBtn.setAttribute('href', `https://liono.ru/product/${totalLink2}`);
 }
 
 document.querySelector('.link-to-siteBtn').addEventListener('click', e => {
